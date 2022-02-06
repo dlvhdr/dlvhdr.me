@@ -1,0 +1,14 @@
+.list {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+.listItem {
+  margin: 0 0 1.25rem;
+}
+
+.subtext {
+  color: var(--dimmed-color);
+  font-size: 0.825rem;
+}
