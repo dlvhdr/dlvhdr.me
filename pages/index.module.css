@@ -1,6 +1,6 @@
 .mainContent {
   display: flex;
-  margin: 0 auto;
+  margin: 40px auto;
   flex-direction: column;
 }
 
@@ -21,7 +21,6 @@
 }
 
 .blogTitle {
-  color: var(--pop-color);
   margin: 0;
 }
 
@@ -29,16 +28,6 @@
   width: 1px;
   background: var(--separator);
   margin: 0px 2em;
-}
-
-.primary {
-  color: var(--pop-color);
-  font-weight: bold;
-}
-
-.hero {
-  margin-top: 36px;
-  margin-bottom: 56px;
 }
 
 .title {

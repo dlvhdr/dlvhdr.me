@@ -10,3 +10,12 @@
   color: var(--primary-color);
   margin: 0px;
 }
+
+.root h2 {
+  margin-top: 8px;
+  margin-bottom: 16px;
+}
+
+.blogPostTitle {
+  line-height: 0;
+}

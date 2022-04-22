@@ -1,0 +1,25 @@
+.root {
+  display: flex;
+  flex-direction: column;
+  gap: 0;
+  margin: 16px;
+}
+
+.language {
+  align-self: flex-end;
+  margin-right: 36px;
+  background-color: var(--code-bg-color);
+  border-radius: 4px 4px 0px 0px;
+  padding: 4px 8px 0px 8px;
+  font-size: 0.85em;
+  font-family: monospace;
+  color: var(--dimmed-color);
+}
+
+.code {
+  margin: 0;
+  background-color: var(--code-bg-color);
+  padding: 16px 24px;
+  border-radius: 8px;
+  overflow-x: auto;
+}

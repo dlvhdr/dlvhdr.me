@@ -48,13 +48,16 @@
 }
 
 :root {
-  --bg-color: #d8dcff;
+  --bg-color: #fffcf9;
+  --card-color: #f6f4f4;
   --separator: #bfc0c9;
-  --primary-color: #11141d;
-  --dimmed-color: #49516e;
-  --pop-color: #194abf;
-  --code-bg-color: #e6e6ed;
-  --main-content-width: 1000px;
+  --primary-color: #011731;
+  --dimmed-color: #676c7c;
+  --pop-color: #287eff;
+  --accent-color: #1c3682;
+  --light-accent-color: #2f54c2;
+  --code-bg-color: #f6f4f4;
+  --main-content-width: 80ch;
 }
 
 @counter-style arrow-right {
@@ -77,6 +80,7 @@ body {
 
 * {
   box-sizing: border-box;
+  -webkit-font-smoothing: antialiased;
 }
 
 p,
@@ -87,40 +91,60 @@ h6 {
 }
 
 h1 {
-  font-size: 2.5em;
+  font-size: 2.3em;
 }
 
 h2 {
-  font-size: 2em;
+  font-size: 1.55em;
+  line-height: 1.4em;
+  color: var(--accent-color);
+  margin-top: 64px;
+  margin-bottom: 12px;
+}
+
+h2 a {
+  color: var(--accent-color);
+  cursor: pointer;
+}
+
+h2 a:hover {
+  text-decoration-color: var(--accent-color);
 }
 
 h3 {
-  font-size: 1.55em;
-  line-height: 1.4em;
+  font-size: 1.3em;
+  line-height: 1.3em;
+  margin-top: 36px;
+  margin-bottom: 12px;
 }
 
 h4 {
-  font-size: 1.4em;
-  line-height: 1.2em;
+  font-size: 1.1em;
+  line-height: 1.1em;
+  margin-top: 24px;
+  margin-bottom: 12px;
 }
 
 h5 {
-  font-size: 1.3em;
-  line-height: 1.2em;
+  font-size: 1.05em;
+  margin-bottom: 12px;
 }
 
 h6 {
-  font-size: 1.2em;
+  font-size: 1.02em;
   line-height: 1.1em;
 }
 
 a {
   color: var(--pop-color);
-  text-decoration: none;
+  font-weight: bold;
+  text-decoration: underline 0.15em rgba(0, 0, 0, 0);
+  transition: text-decoration-color 300ms;
 }
 
 a:hover {
-  text-decoration: underline;
+  text-decoration: underline 0.15em;
+  text-decoration-color: var(--pop-color);
 }
 
 img {
@@ -131,4 +155,8 @@ img {
 ul {
   list-style-type: none;
   padding: 0;
+}
+
+li {
+  margin-bottom: 16px;
 }

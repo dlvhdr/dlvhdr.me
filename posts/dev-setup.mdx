@@ -1,0 +1,436 @@
+---
+title: "My Developer Setup in 2022"
+date: "2022-04-15"
+preface: "How I use my Mac - from reading emails, launching apps to writing code and browsing the internet."
+---
+
+I'm constantly working on improving my dev setup as I find little _annoyances_ I want fixed, or _small improvements_ I can make to my workflow. I also **love** reading about other people's setups, learn new stuff and take what's relevant to me.
+
+Hopefully you can take something from my post, or better - **share _your setup_** and tips with me on [my twitter](https://twitter.com/elys1um).
+
+## What we'll cover
+
+- Why you should spend time on your dev setup
+- Ricing
+- Mac setup
+- Keyboard shortcuts for everything
+- Terminal setup
+- Brew packages
+- My Editor of choice
+- My Git workflow
+
+## Why should you work on your dev setup?
+
+Getting to know the vast ecosystem around **Developer Experience** made me more passionate about the open source community and led me ultimately to even build [my own OSS project](https://github.com/dlvhdr/gh-dash) that helps other developers.
+
+I believe that _"optimizing"_ my setup sparked renewed interest in development for me.
+Working on a Developer Experience product could be my next passion.
+
+And there are many companies that work on tools to help developers and non-developers alike that I might be interested in exploring as future job candidates. Companies that develop things like IDEs (replit, VSCode), or others that write an app launcher (Raycast), Calendar (Cron) or maybe a better tool for work messaging (Slack 😠).
+
+Hopefully I gave you some motivation to work on your dev setup, but let's look at the more concrete reasoning.
+
+<Note>
+  Note that _my setup_ is **always evolving** as I find better ways to do
+  things.
+</Note>
+
+Let's look at some of the concrete benefits of a good dev setup:
+
+#### 1. Less mental overload 🤔
+
+> Sensory overload occurs when one or more of the body's senses experiences over-stimulation from the environment.
+
+When I use my computer, I want every day tasks to happen without requiring me to think.
+That includes launching an app, writing an email, browsing the internet, writing code, viewing my calendar and joining a Zoom meeting.
+
+#### 2. Time saving 📉
+
+Some repetitive tasks can take a lot of time, and optimizing them can free us up to do more important or fun things.
+
+#### 3. Ease of use 🧘
+
+Using the computer should feel easy as we use it for so much of our time. It shouldn't feel exhausting.
+
+#### 4. Proficiency with our tools 🧰
+
+To become a better developer I'd argue we need to be proficient with our tools.
+Just like a carpenter has a high proficiency with his.
+
+## Ricing
+
+Ricing is a useful Linux terminology you can use to google other people's setups.
+
+> A term applied to Japanese motorcycles and which later expanded to include Japanese cars.
+> **Riced out** describes a badly customized sports compact car, usually with oversized or ill-matched exterior appointments
+
+In **programming** though, _ricing_ refers to the effort of customizing your `*nix` installation.
+From wallpapers, fonts and themes to window managers, terminal emulators and CLI utilities.
+
+<img width="450px" src="https://flaxplax.com/images/meme/ricing.png" />
+
+## My Mac setup
+
+Let's start with a few Mac settings:
+
+- The **first thing** I do on a new Mac is set it's key repeat and delay speed.
+
+  Write these commands into your terminal:
+
+  ```bash
+  defaults write -g InitialKeyRepeat -int 20 # normal minimum is 15 (225 ms)
+  defaults write -g KeyRepeat -int 1 # normal minimum is 2 (30 ms)
+  ```
+
+- Automatically Show/Hide the dock (this gives you more screen real-estate!)
+
+  ```bash
+  defaults write com.apple.dock "autohide" -bool "true" && killall Dock
+  ```
+
+- Set the dock's icon size
+
+  ```bash
+  defaults write com.apple.dock "tilesize" -int "36" && killall Dock
+  ```
+
+- Changing where screenshots are saved
+
+  ```bash
+  mkdir -p ~/Pictures/Screenshots
+  defaults write com.apple.screencapture location ~/Pictures/Screenshots
+  defaults write com.apple.screencapture type jpg
+  ```
+
+- Mapping <Keycap>CAPS-LOCK</Keycap> to <Keycap>ESC</Keycap>
+
+<Note>
+  Feel free to explore more settings in [this awesome
+  site](https://macos-defaults.com/).
+</Note>
+
+### Other Mac goodies
+
+- **[SpotMenu](https://kmikiy.github.io/SpotMenu/)** - I often ask myself what's the name of the song that's playing, and SpotMenu let's me easily see that.
+
+![Spotmenu](/images/dev-setup/spotmenu.jpg)
+
+- **[Cron](https://cron.com/)** is a calendar that has good keyboard shortcuts (VIM based), a command palette and an awesome menu bar app. <br />
+  With the menu bar app you can press <Keycap>⌘</Keycap>+<Keycap>^</Keycap>+<Keycap>K</Keycap> to open
+  an agenda view of your next few days and with <Keycap>⌘</Keycap>+<Keycap>^</Keycap>+
+  <Keycap>J</Keycap> **join** the upcoming Zoom meeting 🤯
+
+<img src="/images/dev-setup/cron.png" width="600" />
+
+- **Another cool app** I use is [Spaceman](https://github.com/Jaysce/Spaceman) - an app to view Spaces / Virtual Desktops in the menu bar
+
+## My window Manager
+
+I _hate_ clutter, it makes it difficult for me to keep my focus.
+The _"floating"_ window management most operating systems come with cause windows to overlap, making it harder to easily see their content. They focus too much on the mouse for resizing and positioning windows - which is a **big disadvantage** to me.
+
+For managing my windows I use **[Amethyst](https://github.com/ianyh/Amethyst)**.
+Amethyst is a tiling window manager.
+
+_What's a tiling window manager you ask?_ [According to wikipedia](https://en.wikipedia.org/wiki/Tiling_window_manager):
+
+> A window manager with an organization of the screen into mutually **non-overlapping** frames
+> as opposed to the more common approach of **coordinate-based stacking of overlapping** objects
+
+<figure>
+  <img width="800" src="/images/dev-setup/amethyst.gif" />
+  <Figcaption>
+    In this demo I'm pressing <Keycap>⌥</Keycap>+<Keycap>Shift</Keycap>+
+    <Keycap>L</Keycap> to cycle through the windows clock wise and{" "}
+    <Keycap>⌥</Keycap>+<Keycap>Shift</Keycap>+<Keycap>Space</Keycap> to change
+    layouts.
+  </Figcaption>
+</figure>
+
+The border you can barely see in the GIF around the active window is from a [Hammerspoon](https://www.hammerspoon.org/) [plugin](https://github.com/dlvhdr/dotfiles/blob/main/.config/hammerspoon/border.lua).
+
+> For more details, check out [this video](https://www.youtube.com/watch?v=Idq4Kk-4nmY) by **Brandon Boswell** on tiling window managers for the Mac.
+
+## Application launcher
+
+Launching apps is an every day task you want to feel intuitive and fast.
+
+For this I use **[Raycast](https://www.raycast.com/)**.
+
+> _**Raycast** is a blazingly fast, totally extendable launcher. It lets you complete tasks, calculate, share common links, and much more._
+
+Right now they are in an **_open preview_**, collecting feedback, so it's free! Try joining it, it's so worth it...
+
+What I use it for:
+
+- Launching apps
+- Clipboard history - helpful for when you want to reuse an older copy you made.
+- Snippets - `@@` to quickly paste my email, `@id` to paste my ID number etc.
+- System shortcuts - like locking the screen, restarting my Mac etc.
+- Spotify - I use an extension available on the Raycast extensions store to search for songs on Spotify.
+- Scripts
+  - Playing my favorite Spotify playlist - **Kan 88FM**, a playlist that follows the 88FM Israeli radio station.
+- Confetti - to celebrate wins
+
+## Keyboard everything
+
+Focusing on using the keyboard as much as possible really helped with my wrist pain and even a potential _tennis elbow_.
+
+But if ergonomics aren't your thing, it's also a lot faster to use the keyboard than constantly moving your hand to the mouse.
+
+Besides trying to learn keybindings for everything I use, I've also added **global hotkeys** for launching apps I use all the time.
+
+### O-launching
+
+O-launching / Hyper launching is where you assign single-key keyboard shortcuts to launch / switch to specific apps.<br />
+I use [skhd](https://github.com/koekeishiya/skhd) for that. It takes so much _mental overload_ compared to _cmd-tabbing_.
+
+I use the <Keycap>⌥</Keycap>+<Keycap>Some key</Keycap> keybinding. E.g, <Keycap>⌥</Keycap>+<Keycap>S</Keycap> for slack, <Keycap>⌥</Keycap>+<Keycap>I</Keycap> for my terminal (used to be iTerm) etc.<br />
+
+My config file, for example, contains:
+
+```skhd
+# open chrome
+alt - c : open -a /Applications/Google\ Chrome.app
+```
+
+You can also use **Raycast**'s scripts to achieve that, or **[Karabiner Elements](https://karabiner-elements.pqrs.org/)**.
+
+### Other keyboard related apps I use
+
+- [Vimium](https://github.com/philc/vimium) to emulate VIM bindings in the browser (because one you go VIM you never go back).<br />
+  e.g. <Keycap>F</Keycap> for opening links, <Keycap>^</Keycap><Keycap>D</Keycap> for scrolling half a page down etc.
+
+- [Bitwarden](https://github.com/bitwarden/browser) is my password manager. It has useful keyboard shorcuts: <Keycap>⌘</Keycap>+<Keycap>Shift</Keycap>+<Keycap>Y</Keycap> to open the vault and <Keycap>⌘</Keycap>+<Keycap>Shift</Keycap>+<Keycap>L</Keycap> to auto-fill the username/password.
+
+- [TickTick](https://ticktick.com) is my todos app. You can press <Keycap>⌘</Keycap>+<Keycap>^</Keycap>+<Keycap>A</Keycap> to quickly add a new todo item in a floating window.
+
+## Terminal
+
+**All done** with the Mac, let's move into more _programming_ related stuff.
+
+For my terminal emulator I use [Alacritty](https://github.com/alacritty/alacritty).
+It's main selling point is that it's GPU rendered.
+The reason _I'm_ using it is that it's minimal and it's settings are stored in a single `.yaml` file. I can easily back it up to my dotfiles repo.
+
+<figure>
+  <img src="/images/dev-setup/terminal.jpg" />
+  <Figcaption>
+    My terminal with the `starship` prompt, running the `ls` command using `exa`
+  </Figcaption>
+</figure>
+
+### tmux
+
+For managing multiple terminal sessions I use **[tmux](https://github.com/tmux/tmux/wiki)**.
+It lets me easily switch between several programs in one terminal.
+
+tmux's keybindings require you to first press a **prefix** key - which I use the <Keycap>\`</Keycap> key for.
+
+- My main workflow usually revolves around **quickly switching** between my code editor (Neovim) and the shell.
+- I also multiple sessions so that I can quickly change contexts.
+  For example, a session for my work, another for a side project etc.
+
+<figure>
+  <img src="/images/dev-setup/tmux-window-switching.gif" />
+  <Figcaption>
+    Quickly switching between windows: tmux's window switching view using the{" "}
+    <Keycap>`</Keycap> <Keycap>;</Keycap> keybinding.
+  </Figcaption>
+</figure>
+
+<figure>
+  <img width="600" src="/images/dev-setup/tmux-session-switching.jpg" />
+  <Figcaption>
+    tmux's session switching view using the <Keycap>`</Keycap>{" "}
+    <Keycap>S</Keycap> keybinding.
+  </Figcaption>
+</figure>
+
+tmux also **supports plugins**. Here a couple of important ones I'm using:
+
+- [tmux-resurrect](https://github.com/tmux-plugins/tmux-ressurect) - this let's me save my sessions and windows using a keybinding. If my Mac shuts down or I need to restart it, I can easily restore all of them.
+- [url-view](https://github.com/tmux-plugins/tmux-urlview) - this let's me quickly open any urls that are on screen with a keybinding.
+
+### Shell
+
+For the shell I use `zsh`, most famous for it's plugin manager [oh-my-zsh](https://github.com/ohmyzsh/ohmyzsh).
+
+These are the ones I use:
+
+- `vi-mode` - let's me easily edit my current command with VIM keybindings
+- `zsh-syntax-highlighting` - adds syntax highlighting to my commands
+- `auto-notify` - shows a notification when long running tasks finishes (_> 30 seconds_)
+- `you-should-use` - reminders me to use aliases I've defined
+- `yarn-autocompletions` - provides auto-completions for yarn scripts
+- `fzf-yarn` - I use <Keycap>^</Keycap><Keycap>R</Keycap> to search through history
+- `zoxide` - to easily visit directories I've previously visited
+
+Other shell-related goodies I use include:
+
+- [starship](https://starship.rs/) - this is my shell prompt
+- [exa](https://github.com/ogham/exa) - a modern `ls` replacement
+- [ranger](https://github.com/ranger/ranger) - a CLI replacement for Finder.
+
+#### Aliases
+
+I also created some useful shell **aliases**:
+
+```bash
+# safer defaults that require confirmation
+alias rm="rm -i"
+alias mv="mv -i"
+alias cp="cp -riv"
+alias mkdir='mkdir -vp'
+
+# git
+alias g="git"
+alias gst="git status"
+alias gca="git commit --amend"
+alias gaa="git add -A"
+alias gra="git rebase --abort"
+alias grc="git rebase --continue"
+alias gpf="git push --force"
+
+# fzf for my local branches for easy check out
+function git_checkout() {
+  if [ $# -eq 0 ]
+  then
+    git checkout $(git branch | fzf)
+  else
+    git checkout $@
+  fi
+};
+alias gco="git_checkout"
+
+# commands to easily edit my config files
+alias ez="vim $XDG_CONFIG_HOME/zsh/.zshrc"
+alias sz='source $XDG_CONFIG_HOME/zsh/.zshrc; echo "zsh config reloaded..."'
+alias ea="vim $XDG_CONFIG_HOME/zsh/aliases.zsh"
+alias ev="vim $XDG_CONFIG_HOME/nvim/"
+
+# others
+alias update="brew update && brew upgrade && brew upgrade --cask --greedy && npm update -g"
+alias c="clear; echo -n '\r'; colorscript --exec 21; clear;"
+alias fix="stty sane"
+alias fh='open -a Finder .'
+alias nuke-desktop='rm -rf ~/Desktop/*'
+alias tree="ls --tree"
+alias f="ranger"
+```
+
+## Brew Packages
+
+For installing and updating apps, I mainly use `brew`.
+I created a `Brewfile` that lists everything I have installed with brew, so if I were to switch computers, I can easily re-install everything.
+
+A lot of the apps we've seen can be installed with `brew`.
+So before downloading anything from the mac store / google, I first search if it exists in brew with: `brew info <app name>`
+
+Here's an _"Honorable mentions"_ list of some of my brew packages:
+
+- `jq` - easily parse and filter JSON content
+- `bat` - a modern replacement for `cat`
+- `exa` - a modern replacement for `ls`
+- `bpytop` - a modern replacement for `top`
+- `git-delta` - a better `git` diff tool
+- `fnm` - for quickly switching between node versions
+- `gh` - a CLI app for GitHub
+- `tealdeer` - to quickly see how to use a CLI command
+
+## Editor: Neovim
+
+Why Neovim, you ask?
+
+- It's keyboard oriented with the power of VIM.
+  The program is **built** around the keyboard natively, enabling mouse interaction was just an after-thought.
+- Fully scriptable with **lua**, so I can programitically change it to my liking
+- And it's super fast...
+
+<Note>
+  Interestingly enough, Neovim came in #1 🥇 in the [Stackoverflow 2021
+  Developer
+  Survey](https://insights.stackoverflow.com/survey/2021#section-most-loved-dreaded-and-wanted-collaboration-tools)
+  for the Most Loved Collaboration Tool!
+</Note>
+
+I use **a lot** of plugins so here are some of them:
+
+- Statue line: `lualine`
+- Completions: `nvim-cmp`
+- LSP
+- Syntax highlighting: `treesitter`
+- Fuzzy finder: `telescope`
+- File tree: `nvim-tree`
+- Snippets: `LuaSnip`
+- And a lot of other goodies...
+
+For a full list make sure to check out my [dotfiles](https://github.com/dlvhdr/dotfiles).
+
+<Note>
+  Note that I still use **VSCode** occasionally for debugging and solving
+  complex git merge conflicts.
+</Note>
+
+<figure>
+  <img src="/images/dev-setup/neovim.jpg" />
+  <Figcaption>My Neovim setup shown while editing this blog post</Figcaption>
+</figure>
+
+#### How do you get started with Neovim though?
+
+- `vimtutor` - just type that in your shell. It's a ~30 minutes interactive tutorial on the basics of VIM.
+- I've also used Barbarian Meets Coding tutorials (highly recommended!):
+  - [Boost Your Coding Fu](https://www.barbarianmeetscoding.com/boost-your-coding-fu-with-vscode-and-vim/)
+  - The [VSCode extension](https://marketplace.visualstudio.com/items?itemName=vintharas.learn-vim) that has an awesome tutorial about Vim.
+
+## My Git workflow
+
+For working with `git` I have the following `git` aliases:
+
+- `amend-all = !git add -A && git commit --amend --no-verify`
+- `commit-all = !git add -A && git commit --no-verify`
+- `master = !git checkout $(git remote show origin | awk '/HEAD branch/ {print $NF}')`
+
+I also use these tools extensively:
+
+- [tig](https://github.com/jonas/tig) - for viewing a log of commits, branches and diffs.
+- [GitHub code search](https://cs.github.com/) - for searching other people's code for _"inspiration"_
+
+I have an alias to search my company's GitHub organization, but for security reasons I've replaced it with my own `dlvhdr` owner filter.
+
+```bash
+function wix_code_search() {
+  open "https://cs.github.com/?scopeName=All+repos&scope=&q=owner%3Adlvhdr"
+}
+alias wcs="wix_code_search"
+```
+
+I also use the `gh` CLI tool with the following most frequent commands:
+
+- `gh view pr --web` - for opening the current branch's PR on my browser
+- `gh pr create` - for quickly creating a pr
+- [gh-dash](https://github.com/dlvhdr/gh-dash) (shameless plug) - an extension I wrote to show a dashboard of PRs and Issues
+
+#### Graphite
+
+I use this tool to manage a stack of Pull Requests.
+Make sure to [check them out here](https://docs.graphite.dev/guides/graphite-cli).
+
+> Graphite's command line tool helps you break up large engineering tasks into a series of small, incremental code changes, each of which can be tested, reviewed, and merged independently.
+> This helps you stay unblocked as an author, and get faster, more thoughtful comments from your reviewers.
+
+The following commands are the ones I use the most:
+
+- `gt branch next` and `gt branch prev` - to go up and down the stack of PRs
+- `gt commit amend` and `gt commit create` - to add a commit while preserving the stack
+- `gt stack fix` - to rebase the stack once I pull from origin
+- `gt stack test` - to run tests on each PR on the stack
+- When my company's security 🚓 ever approves this: `gt stack submit` and `gt stack push`, which you can guess what they do
+
+## _That's it!_ 🎉
+
+Hope I've made someone on the internet more productive.
+
+- Check out my [dotfiles](https://github.com/dlvhdr/dotfiles) on GitHub.
+- Follow me on [twitter](https://twitter.com/elys1um) and send me some of your tips!

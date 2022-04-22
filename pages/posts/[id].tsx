@@ -5,49 +5,24 @@ import Head from "next/head";
 import utilStyles from "../../styles/utils.module.css";
 import { MDXRemote } from "next-mdx-remote";
 import styles from "./post.module.css";
-import Highlight, { defaultProps, Language } from "prism-react-renderer";
-import nightOwlLight from "prism-react-renderer/themes/nightOwlLight";
-import classNames from "classnames";
+import InlineCode from "../../components/InlineCode/InlineCode";
+import CodeBlock from "../../components/CodeBlock/CodeBlock";
+import Keycap from "../../components/Keycap/Keycap";
+import BlockQuote from "../../components/BlockQuote/BlockQuote";
+import Figcaption from "../../components/Figcaption/Figcaption";
+import Note from "../../components/Note/Note";
 
 type PostProps = {
   postData: PostData;
 };
 
-type CodeProps = {
-  children: string;
-  className?: string;
-};
-
 const components = {
-  inlineCode: ({ children }: CodeProps) => {
-    return <code className={styles.inlineCode}>{children}</code>;
-  },
-  code: ({ children, className }: CodeProps) => {
-    const language = className?.replace(/^language-/, "") ?? "markdown";
-    return (
-      <Highlight
-        {...defaultProps}
-        theme={nightOwlLight}
-        code={children.trim()}
-        language={language as Language}
-      >
-        {({ className, style, tokens, getLineProps, getTokenProps }) => (
-          <pre
-            className={classNames(className, styles.code)}
-            style={{ color: style.color?.toString() }}
-          >
-            {tokens.map((line, i) => (
-              <div {...getLineProps({ line, key: i })}>
-                {line.map((token, key) => (
-                  <span {...getTokenProps({ token, key })} />
-                ))}
-              </div>
-            ))}
-          </pre>
-        )}
-      </Highlight>
-    );
-  },
+  code: InlineCode,
+  pre: CodeBlock,
+  blockquote: BlockQuote,
+  Figcaption,
+  Keycap,
+  Note,
 };
 
 export default function Post({ postData }: PostProps) {

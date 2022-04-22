@@ -1,0 +1,26 @@
+.note {
+  background-color: var(--card-color);
+  padding: 12px 24px;
+  border-radius: 8px;
+  overflow-x: auto;
+  position: relative;
+  margin-inline: 40px;
+  display: flex;
+  align-items: center;
+  margin-block: 36px;
+}
+
+.note p {
+  margin-bottom: 0;
+}
+
+.note::before {
+  position: absolute;
+  display: block;
+  content: "";
+  left: 0;
+  top: 0;
+  bottom: 0;
+  width: 4px;
+  background-color: var(--pop-color);
+}

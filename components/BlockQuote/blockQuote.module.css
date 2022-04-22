@@ -1,0 +1,25 @@
+.blockquote {
+  background-color: var(--card-color);
+  padding: 8px 24px;
+  border-radius: 8px;
+  overflow-x: auto;
+  position: relative;
+  color: var(--dimmed-color);
+  font-style: italic;
+  margin-block: 36px;
+}
+
+.blockquote p {
+  margin-bottom: 0;
+}
+
+.blockquote::before {
+  position: absolute;
+  display: block;
+  content: "";
+  left: 0;
+  top: 0;
+  bottom: 0;
+  width: 4px;
+  background-color: var(--separator);
+}

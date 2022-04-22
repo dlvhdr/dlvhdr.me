@@ -4,13 +4,14 @@
 }
 
 .content p {
-  margin: 1em 0px;
+  margin-bottom: 24px;
+  line-height: calc(1em + 0.725rem);
 }
 
 .content ul {
   list-style-type: disc;
   padding-left: 40px;
-  margin-top: 4px;
+  margin-top: 16px;
 }
 
 .content ul p {
@@ -22,7 +23,6 @@
 }
 
 .title {
-  color: var(--pop-color);
   margin: 0;
   line-height: 1;
 }
@@ -37,29 +37,16 @@
 }
 
 .content li::marker {
-  color: var(--pop-color);
+  color: var(--light-accent-color);
+}
+
+.content img {
+  margin: 0 auto;
 }
 
 .header {
   display: flex;
   flex-direction: column;
   margin-bottom: 24px;
-}
-
-.code {
-  background-color: var(--code-bg-color);
-  padding: 16px 24px;
-  border-radius: 8px;
-  overflow-x: auto;
-}
-
-.inlineCode {
-  display: inline-block;
-  background-color: var(--code-bg-color);
-  font-size: 0.9em;
-  letter-spacing: -0.5px;
-  padding: 2px 6px 3.5px 6px;
-  margin: -2px -1px;
-  border-radius: 3px;
-  line-height: 1.2;
+  gap: 12px;
 }

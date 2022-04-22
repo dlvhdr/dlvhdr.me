@@ -44,7 +44,10 @@ export default function Layout({ children, home = false }: LayoutProps) {
           </Link>
         </div>
       )}
-      <div className={styles.email}>dolevc2@gmail.com</div>
+      <div className={styles.email}>
+        dolevc2@gmail.com
+        <br />© 2020-present Dolev Hadar. All Rights Reserved.
+      </div>
     </div>
   );
 }

@@ -21,9 +21,9 @@ export default function PostPreview({
     <li className={styles.root}>
       <div className={styles.title}>
         <Link href={`/posts/${id}`}>
-          <a>
-            <h3>{title}</h3>
-          </a>
+          <h2 className={styles.blogPostTitle}>
+            <a>{title}</a>
+          </h2>
         </Link>
         <span className={utilStyles.subtext}>
           <Date dateString={date} />
