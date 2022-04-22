@@ -4,7 +4,7 @@
 }
 
 .content p {
-  margin-bottom: 24px;
+  margin-block: 24px;
   line-height: calc(1em + 0.725rem);
 }
 

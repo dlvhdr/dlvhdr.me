@@ -10,7 +10,7 @@
 }
 
 .blockquote p {
-  margin-bottom: 0;
+  margin-block: 12px;
 }
 
 .blockquote::before {

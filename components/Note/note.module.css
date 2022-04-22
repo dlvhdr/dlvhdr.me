@@ -11,7 +11,7 @@
 }
 
 .note p {
-  margin-bottom: 0;
+  margin-block: 12px;
 }
 
 .note::before {
