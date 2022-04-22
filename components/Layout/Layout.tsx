@@ -1,3 +1,4 @@
+import React from "react";
 import Head from "next/head";
 import styles from "./layout.module.css";
 import Link from "next/link";
@@ -46,7 +47,8 @@ export default function Layout({ children, home = false }: LayoutProps) {
       )}
       <div className={styles.email}>
         dolevc2@gmail.com
-        <br />© 2020-present Dolev Hadar. All Rights Reserved.
+        <br />
+        &copy; 2020-present Dolev Hadar. All Rights Reserved.
       </div>
     </div>
   );

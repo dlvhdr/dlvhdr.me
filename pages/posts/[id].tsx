@@ -1,3 +1,4 @@
+import React from "react";
 import Layout from "../../components/Layout/Layout";
 import Date from "../../components/Date";
 import { getAllPostIds, getPostData, PostData } from "../../lib/posts";

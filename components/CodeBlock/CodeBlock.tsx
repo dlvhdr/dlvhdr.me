@@ -4,19 +4,14 @@ import Highlight, { defaultProps, Language } from "prism-react-renderer";
 import nightOwlLight from "prism-react-renderer/themes/nightOwlLight";
 import classNames from "classnames";
 
-type CodeBlockProps = JSX.IntrinsicElements["pre"] & {
-  children: {
-    props: {
-      className: string;
-      children: React.ReactNode;
-    };
-  };
-};
-
-export default function CodeBlock({ children }: CodeBlockProps) {
+export default function CodeBlock({ children }: JSX.IntrinsicElements["pre"]) {
+  // @ts-ignore
   const language = children?.props?.className?.replace("language-", "") || null;
+  // @ts-ignore
   const trimmed = children?.props?.children.trim();
+
   return (
+    // @ts-ignore
     <Highlight
       {...defaultProps}
       theme={nightOwlLight}

@@ -1,3 +1,4 @@
+import React from "react";
 import Head from "next/head";
 import Layout, { siteTitle } from "../components/Layout/Layout";
 import utilStyles from "../styles/utils.module.css";
