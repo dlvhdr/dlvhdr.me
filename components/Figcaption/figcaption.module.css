@@ -2,6 +2,15 @@
   color: var(--dimmed-color);
   font-style: italic;
   text-align: center;
-  padding-bottom: 20px;
   padding-inline: 36px;
+}
+
+.figcaption p {
+  margin-top: 0;
+}
+
+@media (max-width: 480px) {
+  .figcaption {
+    padding-inline: 0;
+  }
 }

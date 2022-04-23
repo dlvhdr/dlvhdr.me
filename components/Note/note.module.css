@@ -24,3 +24,9 @@
   width: 4px;
   background-color: var(--pop-color);
 }
+
+@media (max-width: 480px) {
+  .note {
+    margin-inline: 0;
+  }
+}

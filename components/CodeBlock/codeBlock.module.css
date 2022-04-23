@@ -3,6 +3,9 @@
   flex-direction: column;
   gap: 0;
   margin: 16px;
+  margin-top: -8px;
+  margin-left: calc(0px - 2 * var(--main-content-inline-padding));
+  margin-right: calc(0px - 2 * var(--main-content-inline-padding));
 }
 
 .language {
@@ -22,4 +25,12 @@
   padding: 16px 24px;
   border-radius: 8px;
   overflow-x: auto;
+}
+
+@media (max-width: 480px) {
+  .root {
+    /* margin-inline: 0; */
+    margin-left: calc(0px - var(--main-content-inline-padding));
+    margin-right: calc(0px - var(--main-content-inline-padding));
+  }
 }

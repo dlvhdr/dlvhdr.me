@@ -23,3 +23,9 @@
   width: 4px;
   background-color: var(--separator);
 }
+
+@media (max-width: 480px) {
+  .blockquote {
+    margin-inline: 0;
+  }
+}

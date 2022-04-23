@@ -21,7 +21,7 @@ export default function PostPreview({
     <li className={styles.root}>
       <div className={styles.title}>
         <Link href={`/posts/${id}`}>
-          <h2 className={styles.blogPostTitle}>
+          <h2>
             <a>{title}</a>
           </h2>
         </Link>

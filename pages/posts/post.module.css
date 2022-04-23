@@ -19,7 +19,15 @@
 }
 
 .content img {
-  padding: 24px;
+  margin-block: 24px;
+}
+
+.content figure {
+  margin-inline: 0px;
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+  margin-block: 24px;
 }
 
 .title {

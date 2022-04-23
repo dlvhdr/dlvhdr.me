@@ -77,30 +77,30 @@ Let's start with a few Mac settings:
 
   Write these commands into your terminal:
 
-  ```bash
-  defaults write -g InitialKeyRepeat -int 20 # normal minimum is 15 (225 ms)
-  defaults write -g KeyRepeat -int 1 # normal minimum is 2 (30 ms)
-  ```
+```bash
+defaults write -g InitialKeyRepeat -int 20 # normal minimum is 15 (225 ms)
+defaults write -g KeyRepeat -int 1 # normal minimum is 2 (30 ms)
+```
 
 - Automatically Show/Hide the dock (this gives you more screen real-estate!)
 
-  ```bash
-  defaults write com.apple.dock "autohide" -bool "true" && killall Dock
-  ```
+```bash
+defaults write com.apple.dock "autohide" -bool "true" && killall Dock
+```
 
 - Set the dock's icon size
 
-  ```bash
-  defaults write com.apple.dock "tilesize" -int "36" && killall Dock
-  ```
+```bash
+defaults write com.apple.dock "tilesize" -int "36" && killall Dock
+```
 
 - Changing where screenshots are saved
 
-  ```bash
-  mkdir -p ~/Pictures/Screenshots
-  defaults write com.apple.screencapture location ~/Pictures/Screenshots
-  defaults write com.apple.screencapture type jpg
-  ```
+```bash
+mkdir -p ~/Pictures/Screenshots
+defaults write com.apple.screencapture location ~/Pictures/Screenshots
+defaults write com.apple.screencapture type jpg
+```
 
 - Mapping <Keycap>CAPS-LOCK</Keycap> to <Keycap>ESC</Keycap>
 
@@ -170,7 +170,7 @@ What I use it for:
 - Spotify - I use an extension available on the Raycast extensions store to search for songs on Spotify.
 - Scripts
   - Playing my favorite Spotify playlist - **Kan 88FM**, a playlist that follows the 88FM Israeli radio station.
-- Confetti - to celebrate wins
+- Confetti - to celebrate wins 🎉
 
 ## Keyboard everything
 
@@ -211,7 +211,7 @@ You can also use **Raycast**'s scripts to achieve that, or **[Karabiner Elements
 
 For my terminal emulator I use [Alacritty](https://github.com/alacritty/alacritty).
 It's main selling point is that it's GPU rendered.
-The reason _I'm_ using it is that it's minimal and it's settings are stored in a single `.yaml` file. I can easily back it up to my dotfiles repo.
+The _reason I'm using it_ is that it's minimal and its settings are stored in a single `.yaml` file. I can easily back it up to my dotfiles repo.
 
 <figure>
   <img src="/images/dev-setup/terminal.jpg" />

@@ -52,12 +52,13 @@
   --card-color: #f6f4f4;
   --separator: #bfc0c9;
   --primary-color: #011731;
-  --dimmed-color: #676c7c;
+  --dimmed-color: #4d515f;
   --pop-color: #287eff;
   --accent-color: #1c3682;
   --light-accent-color: #2f54c2;
   --code-bg-color: #f6f4f4;
   --main-content-width: 80ch;
+  --main-content-inline-padding: 16px;
 }
 
 @counter-style arrow-right {
@@ -158,5 +159,5 @@ ul {
 }
 
 li {
-  margin-bottom: 16px;
+  margin-bottom: 12px;
 }
