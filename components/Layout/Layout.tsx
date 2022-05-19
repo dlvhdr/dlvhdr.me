@@ -4,6 +4,7 @@ import styles from "./layout.module.css";
 import Link from "next/link";
 import GithubIcon from "../Icons/GithubIcon";
 import LinkedInIcon from "../Icons/LinkedInIcon";
+import TwitterIcon from "../Icons/TwitterIcon";
 
 export const siteTitle = "DLVHDR";
 
@@ -26,6 +27,9 @@ export default function Layout({ children, home = false }: LayoutProps) {
             <a>DLVHDR</a>
           </Link>
         </div>
+        <a href="https://twitter.com/elys1um" target="_blank" rel="noreferrer">
+          <TwitterIcon />
+        </a>
         <a href="https://github.com/dlvhdr" target="_blank" rel="noreferrer">
           <GithubIcon />
         </a>
