@@ -27,22 +27,25 @@ const components = {
 };
 
 export default function Post({ postData }: PostProps) {
-  const { title, date, source } = postData;
+  const { title, date, source, preface } = postData;
   return (
-    <Layout home={false}>
+    <>
       <Head>
-        <title>{title}</title>
+        <title>{title} | DLVHDR</title>
+        <meta key="desc" name="description" content={preface} />
       </Head>
-      <article className={styles.content}>
-        <div className={styles.header}>
-          <h1 className={styles.title}>{title}</h1>
-          <div className={utilStyles.subtext}>
-            <Date dateString={date} />
+      <Layout home={false}>
+        <article className={styles.content}>
+          <div className={styles.header}>
+            <h1 className={styles.title}>{title}</h1>
+            <div className={utilStyles.subtext}>
+              <Date dateString={date} />
+            </div>
           </div>
-        </div>
-        <MDXRemote {...source} components={components} />
-      </article>
-    </Layout>
+          <MDXRemote {...source} components={components} />
+        </article>
+      </Layout>
+    </>
   );
 }
 

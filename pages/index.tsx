@@ -25,6 +25,11 @@ export default function Home({ allPostsData }: HomeProps) {
     <Layout home={true}>
       <Head>
         <title>{siteTitle}</title>
+        <meta
+          key="desc"
+          name="description"
+          content="Dolev Hadar's personal website"
+        />
       </Head>
       <main className={styles.mainContent}>
         <section className={styles.posts}>

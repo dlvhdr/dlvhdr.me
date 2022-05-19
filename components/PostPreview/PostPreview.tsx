@@ -20,7 +20,7 @@ export default function PostPreview({
   return (
     <li className={styles.root}>
       <div className={styles.title}>
-        <Link href={`/posts/${id}`}>
+        <Link href={`/posts/${id}`} passHref={true}>
           <h2>
             <a>{title}</a>
           </h2>
