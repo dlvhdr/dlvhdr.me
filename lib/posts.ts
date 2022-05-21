@@ -5,13 +5,13 @@ import { serialize } from "next-mdx-remote/serialize";
 import { MDXRemoteSerializeResult } from "next-mdx-remote";
 
 export interface PostMatter {
+  id: string;
   title: string;
   date: string;
   preface: string;
 }
 
 export interface PostData extends PostMatter {
-  id: string;
   source: MDXRemoteSerializeResult;
 }
 
@@ -26,7 +26,7 @@ export function getSortedPostsData(): PostMatter[] {
     const fileContents = fs.readFileSync(fullPath, "utf8");
 
     const matterResult = matter(fileContents);
-    const data = matterResult.data as PostMatter;
+    const data = matterResult.data as Omit<PostMatter, "id">;
 
     return {
       id,

@@ -1,17 +1,15 @@
-import { getSortedPostsData, PostData } from "../lib/posts";
+import { getSortedPostsData, PostMatter } from "../lib/posts";
+import { GetServerSideProps } from "next";
 
 const DLVHDR_HOSTNAME = "https://dlvhdr.me";
 const EXTERNAL_DATA_URL = `${DLVHDR_HOSTNAME}/posts`;
 
-type Props = {
-  allPostsData: PostData[];
-};
-
-function SiteMap({ allPostsData }: Props) {
-  return generateSiteMap(allPostsData);
+function SiteMap() {
+  return null;
 }
 
-function generateSiteMap(posts: PostData[]) {
+function generateSiteMap() {
+  const posts: PostMatter[] = getSortedPostsData();
   return `<?xml version="1.0" encoding="UTF-8"?>
    <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
      <url>
@@ -30,13 +28,16 @@ function generateSiteMap(posts: PostData[]) {
  `;
 }
 
-export async function getStaticProps() {
-  const allPostsData = getSortedPostsData();
+export const getServerSideProps: GetServerSideProps = async ({ res }) => {
+  const sitemap = generateSiteMap();
+
+  res.setHeader("Content-Type", "text/xml");
+  res.write(sitemap);
+  res.end();
+
   return {
-    props: {
-      allPostsData,
-    },
+    props: {},
   };
-}
+};
 
 export default SiteMap;
