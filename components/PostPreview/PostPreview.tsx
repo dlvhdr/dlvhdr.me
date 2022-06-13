@@ -20,11 +20,11 @@ export default function PostPreview({
   return (
     <li className={styles.root}>
       <div className={styles.title}>
-        <Link href={`/posts/${id}`} passHref={true}>
-          <h2>
+        <h2>
+          <Link href={`/posts/${id}`} passHref={true}>
             <a>{title}</a>
-          </h2>
-        </Link>
+          </Link>
+        </h2>
         <span className={utilStyles.subtext}>
           <Date dateString={date} />
         </span>
