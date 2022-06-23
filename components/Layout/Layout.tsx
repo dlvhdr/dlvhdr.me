@@ -6,7 +6,7 @@ import GithubIcon from "../Icons/GithubIcon";
 import LinkedInIcon from "../Icons/LinkedInIcon";
 import TwitterIcon from "../Icons/TwitterIcon";
 
-export const siteTitle = "DLVHDR";
+export const siteTitle = "Dolev Hadar";
 
 type LayoutProps = {
   children: React.ReactNode;

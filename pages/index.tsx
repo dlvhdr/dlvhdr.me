@@ -28,7 +28,7 @@ export default function Home({ allPostsData }: HomeProps) {
         <meta
           key="desc"
           name="description"
-          content="Dolev Hadar's personal website"
+          content="Dolev Hadar's personal website. I'm a web developer who sometimes likes to write about code."
         />
       </Head>
       <main className={styles.mainContent}>

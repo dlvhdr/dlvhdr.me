@@ -1,7 +1,7 @@
 import { getSortedPostsData, PostMatter } from "../lib/posts";
 import { GetServerSideProps } from "next";
 
-const DLVHDR_HOSTNAME = "https://dlvhdr.me";
+const DLVHDR_HOSTNAME = "https://www.dlvhdr.me";
 const EXTERNAL_DATA_URL = `${DLVHDR_HOSTNAME}/posts`;
 
 function SiteMap() {

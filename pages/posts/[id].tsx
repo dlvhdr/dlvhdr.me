@@ -31,7 +31,7 @@ export default function Post({ postData }: PostProps) {
   return (
     <>
       <Head>
-        <title>{title} | DLVHDR</title>
+        <title>{title} | Dolev Hadar</title>
         <meta key="desc" name="description" content={preface} />
       </Head>
       <Layout home={false}>

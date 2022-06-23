@@ -37,6 +37,7 @@
   padding: 36px 0px;
   font-size: 12px;
   color: var(--dimmed-color);
+  text-align: center;
 }
 
 .nav {
