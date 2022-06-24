@@ -1,4 +1,5 @@
 .root {
+  font-size: var(--16px);
   display: flex;
   flex-direction: column;
   gap: 0;
@@ -15,11 +16,14 @@
   border-radius: 4px 4px 0px 0px;
   padding: 4px 8px 0px 8px;
   font-size: 0.85em;
-  font-family: monospace;
+  font-family: Menlo, Consolas, Monaco, Liberation Mono, Lucida Console,
+    monospace;
   color: var(--dimmed-color);
 }
 
 .code {
+  font-family: Menlo, Consolas, Monaco, Liberation Mono, Lucida Console,
+    monospace;
   margin: 0;
   background-color: var(--code-bg-color);
   padding: 16px 24px;

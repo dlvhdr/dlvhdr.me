@@ -1,10 +1,12 @@
 .container {
-  padding: 24px 12px;
+  --main-content-inline-padding: 1rem;
+
+  padding: 24px 48px;
   height: 100vh;
   display: flex;
   flex-direction: column;
   margin: 0 auto;
-  max-width: var(--main-content-width);
+  max-width: 62.5rem;
   position: relative;
 }
 
@@ -55,19 +57,13 @@
   letter-spacing: 0.1em;
 }
 
-@media only screen and (max-width: 1000px) {
-  .container {
-    padding: 24px;
-  }
-}
-
-@media only screen and (max-width: 480px) {
+@media only screen and (max-width: 30rem) {
   .container {
     padding: var(--main-content-inline-padding);
   }
 
   .header {
-    font-size: 1.4em;
+    font-size: var(--22px);
   }
 
   .nav {

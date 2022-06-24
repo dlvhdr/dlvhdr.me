@@ -1,6 +1,6 @@
 .blockquote {
   background-color: var(--card-color);
-  padding: 8px 24px;
+  padding: 8px 32px;
   border-radius: 8px;
   overflow-x: auto;
   position: relative;
@@ -24,7 +24,7 @@
   background-color: var(--separator);
 }
 
-@media (max-width: 480px) {
+@media (max-width: 30rem) {
   .blockquote {
     margin-inline: 0;
   }

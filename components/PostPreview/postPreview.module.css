@@ -1,18 +1,16 @@
 .root {
-  max-width: 600px;
+  max-width: 32rem;
 }
 
-.title {
+.titleContainer {
   margin-bottom: 12px;
 }
 
-.root h3 {
-  color: var(--primary-color);
-  margin: 0px;
+.titleText {
+  margin-top: 8px;
+  margin-bottom: var(--8px);
 }
 
-.root h2 {
-  margin-top: 8px;
-  margin-bottom: 16px;
-  margin-bottom: 0px;
+.preface {
+  font-size: var(--18px);
 }

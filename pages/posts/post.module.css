@@ -1,17 +1,18 @@
 .content {
+  font-size: var(--20px);
+  max-width: 55rem;
   padding: 24px 0px;
   word-break: break-word;
 }
 
 .content p {
-  margin-block: 24px;
-  line-height: calc(1em + 0.725rem);
+  margin-block: var(--24px);
 }
 
 .content ul {
   list-style-type: disc;
   padding-left: 40px;
-  margin-top: 16px;
+  margin-top: var(--16px);
 }
 
 .content ul p {
@@ -19,7 +20,7 @@
 }
 
 .content img {
-  margin-block: 24px;
+  margin-block: var(--24px);
 }
 
 .content figure {
@@ -27,17 +28,16 @@
   display: flex;
   flex-direction: column;
   gap: 8px;
-  margin-block: 24px;
+  margin-block: var(--24px);
 }
 
 .title {
   margin: 0;
-  line-height: 1;
 }
 
 .content h3 {
-  margin-top: 36px;
-  margin-bottom: 12px;
+  margin-top: var(--36px);
+  margin-bottom: var(--12px);
 }
 
 .content li {
@@ -55,6 +55,6 @@
 .header {
   display: flex;
   flex-direction: column;
-  margin-bottom: 24px;
-  gap: 12px;
+  margin-bottom: var(--24px);
+  gap: var(--8px);
 }

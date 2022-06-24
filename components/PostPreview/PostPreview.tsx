@@ -19,8 +19,8 @@ export default function PostPreview({
 }: PostPreviewProps) {
   return (
     <li className={styles.root}>
-      <div className={styles.title}>
-        <h2>
+      <div className={styles.titleContainer}>
+        <h2 className={styles.titleText}>
           <Link href={`/posts/${id}`} passHref={true}>
             <a>{title}</a>
           </Link>
@@ -29,7 +29,7 @@ export default function PostPreview({
           <Date dateString={date} />
         </span>
       </div>
-      <p>{preface}</p>
+      <p className={styles.preface}>{preface}</p>
     </li>
   );
 }

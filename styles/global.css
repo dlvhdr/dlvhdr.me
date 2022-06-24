@@ -55,6 +55,25 @@
 }
 
 :root {
+  --8px: 0.5rem;
+  --10px: 0.625rem;
+  --12px: 0.75rem;
+  --14px: 0.875rem;
+  --15px: 0.9375rem;
+  --16px: 1rem;
+  --17px: 1.0625rem;
+  --18px: 1.125rem;
+  --19px: 1.1875rem;
+  --20px: 1.25rem;
+  --21px: 1.3125rem;
+  --23px: 1.4375rem;
+  --24px: 1.5rem;
+  --25px: 1.5625rem;
+  --32px: 2rem;
+  --36px: 2.25rem;
+  --48px: 3rem;
+  --64px: 4rem;
+
   --bg-color: #fffcf9;
   --card-color: #f6f4f4;
   --separator: #bfc0c9;
@@ -64,8 +83,8 @@
   --accent-color: #1c3682;
   --light-accent-color: #2f54c2;
   --code-bg-color: #f6f4f4;
-  --main-content-width: 80ch;
-  --main-content-inline-padding: 16px;
+
+  --main-content-inline-padding: var(--16px);
 }
 
 @counter-style arrow-right {
@@ -76,11 +95,12 @@
 
 html,
 body {
-  font-family: "Merriweather", serif;
+  font-family: Iowan Old Style, Apple Garamond, Baskerville, Times New Roman,
+    Droid Serif, Times, Source Serif Pro, serif, Apple Color Emoji,
+    Segoe UI Emoji, Segoe UI Symbol;
   padding: 0;
   margin: 0;
   line-height: 1.6;
-  font-size: 19px;
   background-color: var(--bg-color);
   min-height: 100vh;
   color: var(--primary-color);
@@ -88,6 +108,7 @@ body {
 
 * {
   box-sizing: border-box;
+  line-height: calc(1em + var(--12px));
   -webkit-font-smoothing: antialiased;
 }
 
@@ -99,15 +120,15 @@ h6 {
 }
 
 h1 {
-  font-size: 2.3em;
+  font-size: var(--36px);
 }
 
 h2 {
-  font-size: 1.55em;
-  line-height: 1.4em;
+  font-size: var(--25px);
+  line-height: var(--23px);
   color: var(--accent-color);
-  margin-top: 64px;
-  margin-bottom: 12px;
+  margin-top: var(--64px);
+  margin-bottom: var(--12px);
 }
 
 h2 a {
@@ -120,38 +141,38 @@ h2 a:hover {
 }
 
 h3 {
-  font-size: 1.3em;
-  line-height: 1.3em;
-  margin-top: 36px;
-  margin-bottom: 12px;
+  font-size: var(--21px);
+  line-height: var(--21px);
+  margin-top: var(--36px);
+  margin-bottom: var(--12px);
 }
 
 h4 {
-  font-size: 1.1em;
-  line-height: 1.1em;
-  margin-top: 24px;
-  margin-bottom: 12px;
+  font-size: var(--18px);
+  line-height: var(--18px);
+  margin-top: var(--24px);
+  margin-bottom: var(--12px);
 }
 
 h5 {
-  font-size: 1.05em;
-  margin-bottom: 12px;
+  font-size: var(--17px);
+  margin-bottom: var(--12px);
 }
 
 h6 {
-  font-size: 1.02em;
-  line-height: 1.1em;
+  font-size: var(--16px);
+  line-height: var(--18px);
 }
 
 a {
   color: var(--pop-color);
   font-weight: bold;
-  text-decoration: underline 0.15em rgba(0, 0, 0, 0);
+  text-decoration: underline 0.15rem rgba(0, 0, 0, 0);
   transition: text-decoration-color 300ms;
 }
 
 a:hover {
-  text-decoration: underline 0.15em;
+  text-decoration: underline 0.15rem;
   text-decoration-color: var(--pop-color);
 }
 
@@ -166,5 +187,5 @@ ul {
 }
 
 li {
-  margin-bottom: 12px;
+  margin-bottom: var(--12px);
 }

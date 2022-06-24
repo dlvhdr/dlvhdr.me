@@ -27,17 +27,17 @@
 .separator {
   width: 1px;
   background: var(--separator);
-  margin: 0px 2em;
+  margin: 0px var(--32px);
 }
 
 .title {
   font-weight: bold;
-  font-size: 3em;
+  font-size: var(--48px);
   margin: 0;
 }
 
 .description {
-  font-size: 1.6em;
+  font-size: var(--25px);
 }
 
 @media only screen and (max-width: 800px) {
