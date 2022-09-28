@@ -2,8 +2,8 @@
 # first `ssh dlvhdr`
 
 git pull --rebase
-npm install
-npm run build
+yarn install
+yarn run build
 pkill -f "start -p 3001"
-npm run start &
+yarn run start &
 
