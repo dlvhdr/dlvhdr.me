@@ -8,6 +8,7 @@
   display: flex;
   align-items: center;
   margin-block: 36px;
+  gap: 1ch;
 }
 
 .note p {
