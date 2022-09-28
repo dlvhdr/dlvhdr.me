@@ -189,3 +189,28 @@ ul {
 li {
   margin-bottom: var(--12px);
 }
+
+table {
+  width: 100%;
+  border-bottom: 1px solid var(--separator);
+  border-collapse: collapse;
+}
+
+table thead th,
+table tfoot th {
+  font-weight: bold;
+  text-align: left;
+}
+
+table th,
+table td {
+  padding: 0.5em;
+  border-bottom: 1px solid var(--separator);
+}
+
+hr {
+  margin: var(--64px) 0px;
+  background: var(--separator);
+  border: none;
+  height: 1px;
+}

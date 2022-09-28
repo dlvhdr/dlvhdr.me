@@ -1,0 +1,439 @@
+---
+title: "The Renaissance of the Command Line"
+date: "2022-09-27"
+preface: ""
+---
+
+Recently, I've been falling **in love** with the CLI 💗.
+
+I went through a rabbit hole of trying to make my developer experience better and found that a lot of stuff are _snappier_ to do on the terminal.
+On top of that, there have been a lot of innovation surrounding the terminal.
+
+So hopefully I can convince you to give the terminal more attention and that you find it rewarding.
+
+## Table of Contents
+
+* Innovations in the CLI
+* Why spend more time in the terminal?
+* The terminal can do that?
+* How does the terminal work?
+* Writing a roulette terminal app using Bubbletea
+
+
+--- 
+
+>⣿⣿⣿⣿⣿⣿⣿⣿⣷⣿⡯⡯⠽⠋⠛⠛⠂⠀⠀⠀⠀⢀⣤⣶⣿⣿⣿⣿⣿⣿⣿⣿⣿⣷⣤⣀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀
+>⣽⣿⣿⣿⣯⢩⣬⣋⣹⣏⠁⢈⠀⡐⠀⠀⠀⠀⠀⢀⣼⣿⣿⣿⢿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣷⣤⡀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀
+>⣿⠿⠻⢣⡨⡍⣉⡈⠀⠀⠀⠀⠀⠀⠀⠀⠀⣠⣾⠿⠛⠉⠁⠀⠀⠈⠉⠉⠙⠻⣿⣿⣿⣿⣿⣿⣿⣿⣷⣄⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀     
+>⠁⠐⠘⠳⠋⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⣰⡿⠁⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠈⢻⣿⣿⣿⣿⣿⣿⣿⣿⣄⠀⠀⠀⠀⠀⠀⠀⠀⠀     
+>⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⣠⣼⣿⠁⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⣿⣿⣿⣿⣿⣿⣿⣿⣿⡆⠀⠀⠀⠀⠀⠀⠀⠀     
+>⠀⠄⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⢰⣿⣿⡿⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠘⣿⣿⣿⣿⣿⣿⣿⣿⣿⡀⠀⠀⠀⠀⠀⠀⠀     
+>⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⣿⣿⣿⡇⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⢀⣿⣿⣿⣿⣿⣿⣿⣿⣿⡇⠀⠀⠀⠀⠀⠀⠀     
+>⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⢸⣿⣿⣿⣷⣤⢴⣒⣲⣄⠀⠀⢀⣾⡿⣓⣒⣲⣶⣶⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⠀⠀⠀⠀⠀⠀⠀    
+>⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⢸⣿⣿⣿⣿⠙⠋⠙⠛⠛⠀⠀⢸⠟⠉⠀⠙⠛⠿⠛⠉⢙⣿⣿⣿⣿⣿⣿⣿⣿⣿⠀⠀⠀⠀⠀⠀⠀    
+>⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⢀⣾⣿⣿⣿⣿⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⢸⣿⣿⣿⣿⣿⣿⣿⣿⣿⡄⠀⠀⠀⠀⠀⠀    
+>⣀⣀⡀⡀⠀⠀⠀⠀⠀⠀⠠⢸⣿⣿⣿⣿⣿⡀⠀⠀⠀⠀⠀⠀⠀⢀⠀⠀⠀⠀⠀⠀⢀⣾⣿⣿⣿⣿⣿⣿⣿⣿⣿⡇⠀⡀⢀⠀⡀⠀    
+>⣅⣀⣀⣀⣀⠀⠀⠀⠀⠀⠄⡜⣿⣿⣿⣿⣿⣧⠀⠀⠀⠀⢀⣤⣶⣾⠀⠀⠀⠀⠀⢀⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⡑⡒⠐⠑⠀⢷    
+>⣿⣵⣶⣿⣯⣾⣢⠵⡤⢉⠥⣀⣿⣿⣿⣿⣿⣿⡆⠀⢀⣀⣀⢉⣋⣡⣤⣤⠀⠀⠀⣼⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⡇⠀⠀⠁⣠⣴
+>⣿⣿⣟⢻⠝⠛⠃⠀⢖⠀⢄⣄⣿⣿⣿⣿⣿⣿⣿⣄⠀⠀⠀⢬⣭⣽⠋⠀⠀⠀⣼⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣧⣤⣾⣿⣿⣿
+>⣿⣿⣷⣑⣀⣁⠘⠍⠲⣮⡴⠡⣿⣿⣿⣿⣿⣿⣿⣿⣷⣄⠀⠀⠀⠀⠀⣠⣴⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿
+>⣿⣯⣋⡋⠳⢈⠀⢨⢠⠒⡆⠒⠹⣿⣿⣿⣿⣿⣿⣿⣿⣿⣷⣤⣤⣤⣶⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿
+>⣿⣿⣟⣶⣾⣶⢶⢠⡠⡄⣽⣾⣣⢿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿
+
+
+## Innovations
+
+Let's talk about those innovations that I mentioned.
+
+You might think that the terminal is a boring interface and kind of depressing to stare at all day.
+Well, actually, it can be _**glamorous**_ 🌈
+
+- [Charm](https://charm.sh), is a faily new startup that wrote a bunch of libraries to help us make the terminal less boring.
+We'll see some of those libraries later on, so no spoilers.
+- In 2016, Microsoft launched the Windows Subsystem for Linux, which lets developers run a GNU/Linux environment -- including most command-line tools.
+And they also launched the new [Windows Terminal](https://apps.microsoft.com/store/detail/windows-terminal/9N0DX20HK701?hl=en-il&gl=il)
+- Another new startup in the field is [Warp](https://www.warp.dev/), that are reimagining the terminal.
+If we go to their site, you can see the terminal looks completely different.
+You can edit commands like you're in VSCode with multi cursors, get "Intellisense" like autocompletion, jump between command blocks and more.
+You even have a "GitHub Copilot" kind of assistant for when you forget how to perform some command.
+
+- In fact, there's an explosion of new terminal emulators, some of them are [kitty](https://sw.kovidgoyal.net/kitty/), [alacritty](https://github.com/alacritty/alacritty) and [wezterm](https://wezfurlong.org/wezterm/)
+
+## Why spend more time on terminal?
+
+
+1. CLIs are great for telling computers **exactly** what to do.
+Unlike GUI applications, where a bunch of different workflows are hidden behing a naive looking button.
+2. CLIs are composoble. That's basically the UNIX philosophy.
+Write something that does one thing and does it well.
+You can them pipe one command's output to another's input to compose more complex pipelines.
+3. For those that care about ergonomics and staying on the keyboard for speed's sake (what I mean is you move less between the mouse and the keyboard), the terminal is a better choice.
+4. The shell is the closest thing to the OS, so you can easily interact with it (files, network etc.)
+5. Many times, GUI apps exist solely as friendlier but weaker versions of a CLI app. Knowing the CLI version gives more power with granularity.
+6. And as a developer you're already in the CLI a lot, so why not learn to master it.
+7.  Large ecosystem
+
+> The problem with **WYSIWYG** is that it is usually equivalent to **WYSIATI** (What You See Is All There Is).
+
+## The terminal can do that?
+
+Let's see some examples of stuff you probably didn't know you could do in the terminal
+
+1. Draw
+
+    First up, you can actually [draw](https://github.com/maaslalani/draw) in the terminal.
+
+    ![draw](/images/the-renaissance-of-the-command-line/draw.gif)
+
+2. You can celebrate wins with some [confetty](https://github.com/maaslalani/confetty)!
+
+    ![confetty](https://github.com/maaslalani/confetty/blob/main/assets/confetty.gif?raw=true)
+
+3. You can play magic tricks!
+
+    ![magic](/images/the-renaissance-of-the-command-line/magic.gif)
+
+    That last example uses a library called [gum](https://github.com/charmbracelet/gum). 
+    gum let's you easily create user-interactable scripts, which also look good!
+    Here's some of the script from the last example:
+
+      ```bash
+      gum choose "Yes" "No"
+      # ...
+      CARD=$(gum choose "Ace (A)" "Two (2)" ) # ... 
+      SUIT=$(gum choose "Hearts (♥)" "Diamonds (♦)" "Clubs (♣)" "Spades (♠)")
+      # ...
+      gum style --foreground 212 "You picked the $CARD of $SUIT."
+      gum style --border rounded --padding "0 1" --margin 2 --border-foreground 1 --foreground 1 # red
+      echo "Is this your card?"
+      gum choose "Omg, yes!" "Nope, sorry!"
+      ```
+
+    The code here is quite simple.
+    You use _gum_ to answer the first few questions using `gum choose`.
+    You then pick a card again with `gum choose`.
+    You then print the chosen card with `gum style` to give it a nice rounded border. etc.
+
+4. Finally, you can create complex UIs - **gh-dash**
+
+    The [GitHub CLI](https://cli.github.com/) allows you to write extensions for it.
+    I've written one, which is called [gh-dash](https://github.com/dlvhdr/gh-dash) and I'd like to share it with you.
+    `gh-dash` is a CLI TUI (Terminal UI) that displays a dashboard with pull requests and issues by filters you care about.
+
+    It's using Charm's [Bubbletea](https://github.com/charmbracelet/bubbletea) library to render the complex UI.
+
+    ![gh-dash](https://raw.githubusercontent.com/dlvhdr/gh-prs/main/demo.gif)
+
+## How does the terminal work?
+
+Now that we know you can do a lot with the terminal, let's learn more about how all of this works.
+
+The most basic term we need to learn about is _Escape Sequences_.
+ANSI escape sequences are a standard for signaling terminal emulators to do special things.
+Terminal emulators are the programs that render the user input and the commands output.
+They send the input to a program called the SHELL (zsh, bash etc).
+
+The terminal interprets these sequences as commands rather than display the text as is.
+
+### Escape Sequences
+
+Let's see an example of an Escape Sequence: `\x1b[1;31m`
+
+1. The first few characters lets the terminal know that this is the start of an escape sequence.
+There are multiple ways to write ESC, in its octal/hex notation: Ctrl-Key `^[`,  Octal `\033`, Hexadecimal `\x1b`, ...
+
+2. Right after that, there is a separator: `[`.
+
+3. Then the list of display attributes, each separated with a semicolumn.
+
+    Below is a table of some of the display attributes.
+    In this example we set `1` so the text is bold, and `31` so that it's red.
+
+    | n | Name  | Note |
+    |---|---|---|
+    | 0 | Reset or normal | All attributes off |
+    | 1 | Bold | |
+    | ... | | |
+    | 30-37 | Set foreground color | |
+    | ... | | |
+    | 40-47	| Set background color  | |
+
+4. Finally, `m` represents the end of the sequence.
+
+<Note>
+Try running this in your terminal: `echo -e "\033[1;31mHello\033[0m"` which should print <span style={{color: "red", fontWeight: "bold"}}>Hello</span>
+</Note>
+
+### Colors in the terminal
+
+The 8 color display attribute I showed earlier is a bit limiting.
+We also have 256 color support for most terminals.
+To use them we can write the attribute: `38;5`, then the ID (out of 256) of the color.
+
+### ANSI colors
+
+Here's a simple python script to display all 256 colors you can run in your terminal:
+
+```python
+import sys
+for i in range(0, 16):
+    for j in range(0, 16):
+        code = str(i * 16 + j)
+        sys.stdout.write(u"\u001b[48;5;" + code + "m " + code.ljust(4))
+    print(u"\u001b[0m")
+```
+
+This should give your the output of:
+![ansi](/images/the-renaissance-of-the-command-line/ansi.png)
+
+
+> For more info check out [Haoyi's Blog Post](https://www.lihaoyi.com/post/BuildyourownCommandLinewithANSIescapecodes.html)
+
+### True color
+
+But most newer terminals support TrueColor, strikethroughs, dotted underlines etc.
+
+Here's a simple script to test your terminal's capabilities.
+```bash
+curl -L https://bit.ly/3A5B3u3 | python3 | less -R
+```
+
+![True Color](/images/the-renaissance-of-the-command-line/truecolor.png)
+
+### Controling the cursor position
+
+Using escape sequences we can also control where characters are printed.
+The `H` command lets us specify coordinates.
+Without any arguments, (0,0) is the default - the top left corner.
+
+Here I'm printing three 😽 at line 25, each spaced 5 columns apart.
+
+```bash
+echo -e '\033[25;25H😽\033[25;30H😽\033[25;35H😽'
+```
+
+This allows us to easily override existing text, to do stuff like progress bars, redraw our app's UI etc.
+
+## Writing a Roulette Bubbletea application
+
+Now that we have a low-level understanding of how a terminal works, let's forget all that and use a bunch of libraries that make it a lot easier!
+
+We're going to write a simple app called **Roulette**.
+The app can help you randomly choose between different items. E.g:
+ * What to eat for dinner
+ * Who's next to go in the daily
+ * etc...
+
+This is how the final app looks like:
+
+![Roulette - Finished App](/images/the-renaissance-of-the-command-line/roulette.gif)
+
+The libraries we're going to use are from **Charm**.
+To write the app, we'll learn:
+* Just a bit of Go.
+* The Elm Architecture used by Charm's Bubbletea lib.
+* Charm's libraries: bubbletea, lipgloss and glamour.
+
+### Charm's libraries
+
+To get ourselves familiar with Charm's libraries we can simply ssh to `git.charm.sh`.
+Here we can read each lib's README, see its files, commits, etc.
+When we ssh into `git.charm.sh` we are actually connecting to another one of Charm's libs, called Wish.
+
+![Soft Serve](https://camo.githubusercontent.com/a389360d69dd8ad202c7b807044be6466b16dc2f5356a3b05da64c3c73fb26cb/68747470733a2f2f73747566662e636861726d2e73682f736f66742d73657276652f736f66742d73657276652d64656d6f2e6769663f30)
+
+### Go
+
+Now, to use Charm's libs we need some Go knowledge.
+Again, we're going to use the terminal for that.
+For those unfamiliar, [cheat.sh](cheat.sh) is a site that's built for consumption on the terminal.
+
+<Note>
+You can write something like `curl cheat.sh/go/:learn` to learn the basics of Go.
+</Note>
+
+If you prefer a more thorough tutorial, check out the interactive [A Tour of Go](https://go.dev/tour/welcome/1).
+
+### The ELM Architecture
+
+One last concept we need to know in order to use Charm's Bubbletea lib, is the Elm architecture.
+Think of it like a React's app lifecycle.
+Bubbletea's runtime (that's used to run our app) uses this architecture.
+
+![ELM Architecure](/images/the-renaissance-of-the-command-line/elm.png)
+
+- We first define a Model.
+    This model represents our app's state. It's a simple object we define. 
+    In it, we need to store all the information we need to render our UI.
+
+- Given a Model, the ELM runtime calls our "View" function, which we use to return a string.
+    Remember, terminals only display text, so that string is actually our UI!
+
+- Now that we know that given a Model we render a View, we need a way to change the model.
+    That's where the Update function comes in.
+		
+		- This function recieves a message when "things happen".
+
+			Here, we write logic to update the model, depending on what happened.
+			Messages are the way we declare what happened.
+			User input is just one thing that might happen, but it could also be a timer firing, a network call that was returned, a file read from disk etc.
+
+		- In addition to that, the update function can return commands.
+			Commands are functions that bubbletea runs for us, asynchronously, that return a new message.
+			Those messages will also eventually be sent to the update function to create our runtime loop.
+
+<Note>
+For anyone who's familiar with Redux, the model is the state, messages are actions and commands are action creators.
+</Note>
+
+## Let's start writing the app!
+
+### Our Model
+
+Let's first create our Model.
+It will hold the list of options the user passed as arguments, as well as the current tick of the rolette's rotation.
+
+```go
+type model struct {
+  options []string
+  currId int
+}
+```
+
+### The Update function
+
+This function does a couple of things:
+- Quit the app when the user presses <Keycap>Ctrl+c</Keycap> or <Keycap>q</Keycap>
+- Spin the roulette.
+    Once a `tickMsg` is received we:
+    - Advance the `currId` variable
+    - fire another one by calling `doTick`.
+
+```go
+
+// define a type for the tickMsg
+type tickMsg time.Time
+
+// Use bubbletea's utility Tick function to make sure 
+// tickMsgs are fired with a consistent interval of 80ms.
+func doTick() tea.Cmd {
+  return tea.Tick(time.Millisecond*80, func(t time.Time) tea.Msg {
+    return tickMsg(t)
+  })
+}
+
+// Our update function
+func (m Model) Update(msg tea.Msg) (tea.Model, tea.Cmd) {
+  switch msg := msg.(type) {
+  
+  case tea.KeyMsg:
+    switch msg.String() {
+    
+    case "ctrl+c", "q":
+    	return m, tea.Quit
+    
+    }
+
+  case tickMsg:
+    m.currId = (m.currId + 1) % len(m.options)
+    return m, doTick()
+    
+  }
+
+  return m, nil
+}
+```
+
+### Starting up the roulette's rotation
+
+In order to start rotating `currId`, bubbletea provides us with an `Init` function which it will call before the first update.
+We'll use that to fire our first `tickMsg`.
+
+```go
+func (m Model) Init() tea.Cmd {
+  return doTick()
+}
+```
+
+
+### The View function
+
+Here we're returning the string that represents our UI.
+- We render the options using lipgloss styles (more on those later)
+- We put each option in the `renderedOptions` array with an offset, depending on `currId`.
+    This will make our options rotate like in a roulette.
+
+```go
+func (m Model) View() string {
+  s := strings.Builder{}
+
+  renderedOptions := make([]string, len(m.options))
+  for i := 0; i < len(m.options); i++ {
+    option := m.options[(i+m.currId)%len(m.options)]
+
+    var style lipgloss.Style
+    if i == len(m.options)/2 {
+    	style = selectedItemStyle
+    } else {
+    	style = itemStyle
+    }
+
+    renderedOptions[i] = style.Render(option)
+  }
+
+  s.WriteString(lipgloss.JoinVertical(lipgloss.Center, renderedOptions...))
+
+  s.WriteString("\n")
+  return s.String()
+}
+```
+
+### Styling
+
+For styling, we'll use lipgloss.
+
+
+```go
+var (
+  itemStyle = lipgloss.NewStyle().
+      Padding(0, 5).
+      Width(20).
+      Height(1).
+      Align(lipgloss.Center)
+
+  selectedItemStyle = itemStyle.Copy().
+      Background(lipgloss.Color("1")). // red
+      Foreground(lipgloss.Color("0")). // black
+      Bold(true)
+)
+```
+
+### The full code
+
+You can view the full code at my GitHub:
+https://github.com/dlvhdr/roulette/blob/tutorial/03-finished/roulette.go
+
+### Taking it to the next level
+
+With some more styling, and by adding physics using Charm's [Harmonica](https://github.com/charmbracelet/harmonica) lib, we can get something like this:
+
+![Dinner Roulette](/images/the-renaissance-of-the-command-line/dinner.gif)
+
+View the source code for this more advanced version in [dlvhdr/roulette](https://github.com/dlvhdr/roulette).
+
+
+## Reources
+
+- [Charm](https://charm.sh)
+- [ANSI escape codes](https://en.wikipedia.org/wiki/ANSI_escape_code)
+- [Bubbletea](https://github.com/charmbracelet/bubbletea)
+- [confetty](https://github.com/maaslalani/confetty)
+- [gum](https://github.com/charmbraceletm/gum)
+- [slides](https://github.com/maaslalani/slides) - used to power this presentation
+- [gh](https://github.com/cli/cli) - the GitHub CLI
+- [gh-dash](https://github.com/dlvhdr/gh-dash) - my GitHub dashboard extension
+- [My blog](https://dlvhdr.me)
+
+### Thank you! 🌟
+
+
