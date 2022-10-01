@@ -6,15 +6,7 @@ import { getSortedPostsData, PostData } from "../lib/posts";
 import PostPreview from "../components/PostPreview/PostPreview";
 import styles from "./index.module.css";
 import classNames from "classnames";
-
-export async function getStaticProps() {
-  const allPostsData = getSortedPostsData();
-  return {
-    props: {
-      allPostsData,
-    },
-  };
-}
+import generateRssFeed from "../lib/generateRssFeed";
 
 type HomeProps = {
   allPostsData: PostData[];
@@ -45,4 +37,15 @@ export default function Home({ allPostsData }: HomeProps) {
       </main>
     </Layout>
   );
+}
+
+export async function getStaticProps() {
+  await generateRssFeed();
+
+  const allPostsData = getSortedPostsData();
+  return {
+    props: {
+      allPostsData,
+    },
+  };
 }

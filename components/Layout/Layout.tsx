@@ -5,6 +5,7 @@ import Link from "next/link";
 import GithubIcon from "../Icons/GithubIcon";
 import LinkedInIcon from "../Icons/LinkedInIcon";
 import TwitterIcon from "../Icons/TwitterIcon";
+import RssIcon from "../Icons/RssIcon";
 
 export const siteTitle = "Dolev Hadar";
 
@@ -27,6 +28,9 @@ export default function Layout({ children, home = false }: LayoutProps) {
             <a>DLVHDR</a>
           </Link>
         </div>
+        <a href="/rss/feed.xml" target="_blank" rel="noreferrer">
+          <RssIcon />
+        </a>
         <a href="https://twitter.com/dlvhdr" target="_blank" rel="noreferrer">
           <TwitterIcon />
         </a>
