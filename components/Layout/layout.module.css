@@ -1,9 +1,6 @@
 .container {
-  --main-content-inline-padding: 1rem;
-
   height: 100%;
   width: 100%;
-  padding: 24px 48px;
   display: flex;
   flex-direction: column;
   position: relative;
@@ -25,6 +22,9 @@
 }
 
 .mainContent {
+  --main-content-inline-padding: 1rem;
+
+  padding: 0 var(--main-content-inline-padding);
   width: 100%;
   max-width: 55rem;
   margin: 0 auto;
@@ -56,10 +56,11 @@
   width: 100%;
   font-size: 1.25em;
   margin-bottom: 12px;
-  padding: 12px 0px;
+  padding: 20px 0px;
 }
 
 .navContainer {
+  padding: 0px var(--main-content-inline-padding);
   display: flex;
   gap: 24px;
   flex-direction: row;
@@ -98,10 +99,6 @@ body[data-theme="dark"] .themeButton {
 }
 
 @media only screen and (max-width: 30rem) {
-  .container {
-    padding: var(--main-content-inline-padding);
-  }
-
   .header {
     font-size: var(--22px);
   }
