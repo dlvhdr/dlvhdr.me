@@ -58,14 +58,16 @@ export default function Layout({ children, home = false }: LayoutProps) {
           </button>
         </div>
       </nav>
-      <main className={styles.mainContent}>{children}</main>
-      {!home && (
-        <div className={styles.backToHome}>
-          <Link href="/">
-            <a>← Back</a>
-          </Link>
-        </div>
-      )}
+      <main className={styles.mainContent}>
+        {children}
+        {!home && (
+          <div className={styles.backToHome}>
+            <Link href="/">
+              <a>← Back</a>
+            </Link>
+          </div>
+        )}
+      </main>
       <div className={styles.email}>
         dolevc2@gmail.com
         <br />
