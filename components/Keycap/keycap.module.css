@@ -1,7 +1,8 @@
 .keycap {
-  background-color: #eee;
+  color: var(--primary-color);
+  background-color: --card-color;
   border-radius: 3px;
-  border: 1px solid #b4b4b4;
+  border: 1px solid var(--separator);
   box-shadow: 0 1px 1px rgba(0, 0, 0, 0.2),
     0 2px 0 0 rgba(255, 255, 255, 0.7) inset;
   display: inline-block;
