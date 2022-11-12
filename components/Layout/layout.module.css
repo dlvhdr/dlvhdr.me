@@ -26,7 +26,7 @@
 
   padding: 0 var(--main-content-inline-padding);
   width: 100%;
-  max-width: 55rem;
+  max-width: var(--site-max-width);
   margin: 0 auto;
   flex-grow: 1;
 }
@@ -64,7 +64,7 @@
   display: flex;
   gap: 24px;
   flex-direction: row;
-  max-width: 55rem;
+  max-width: var(--site-max-width);
   width: 100%;
   margin: 0 auto;
 }

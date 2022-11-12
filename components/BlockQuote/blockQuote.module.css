@@ -7,6 +7,7 @@
   color: var(--dimmed-color);
   font-style: italic;
   margin-block: 36px;
+  font-variation-settings: "ital" 3, "wdth" 100;
 }
 
 .blockquote p {

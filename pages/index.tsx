@@ -27,7 +27,7 @@ export default function Home({ allPostsData }: HomeProps) {
         <section className={styles.posts}>
           <div className={classNames(styles.postsList, utilStyles.list)}>
             <h1 className={styles.blogTitle}>Blog Posts 📖</h1>
-            <ul>
+            <ul className={styles.postPreviews}>
               {allPostsData.map((post) => (
                 <PostPreview key={post.id} {...post} />
               ))}

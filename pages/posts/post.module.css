@@ -1,6 +1,6 @@
 .content {
   font-size: var(--20px);
-  max-width: 55rem;
+  max-width: var(--site-max-width);
   padding: 24px 0px;
   word-break: break-word;
 }
@@ -11,7 +11,7 @@
 
 .content ul {
   list-style-type: disc;
-  padding-left: 40px;
+  padding-left: var(--list-padding);
   margin-top: var(--16px);
 }
 

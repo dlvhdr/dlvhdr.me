@@ -28,5 +28,6 @@
 @media (max-width: 480px) {
   .note {
     margin-inline: 0;
+    width: calc(100vw - 2 * var(--main-content-inline-padding));
   }
 }

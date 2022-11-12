@@ -1,60 +1,50 @@
 @font-face {
-  font-family: "Merriweather";
-  src: url("../public/fonts/Merriweather-Regular.woff2") format("woff2");
-  font-weight: normal;
-  font-style: normal;
-  font-display: fallback;
+  font-family: "Mona Sans";
+  src: url("../public/fonts/Mona Sans/Mona-Sans.woff2")
+      format("woff2 supports variations"),
+    url("../public/fonts/Mona Sans/Mona-Sans.woff2") format("woff2-variations");
+  font-weight: 200 900;
+  font-stretch: 75% 125%;
 }
 
 @font-face {
-  font-family: "Merriweather";
-  src: url("../public/fonts/Merriweather-Italic.woff2") format("woff2");
-  font-weight: normal;
+  font-family: "Mona Sans";
+  src: url("../public/fonts/Mona Sans/Mona-Sans-RegularItalic.woff2")
+      format("woff2 supports variations"),
+    url("../public/fonts/Mona Sans/Mona-Sans-RegularItalic.woff2")
+      format("woff2-variations");
+  font-weight: regular;
+  font-stretch: 75% 125%;
   font-style: italic;
-  font-display: fallback;
 }
 
 @font-face {
-  font-family: "Merriweather";
-  src: url("../public/fonts/Merriweather-Black.woff2") format("woff2");
-  font-weight: 900;
-  font-style: normal;
-  font-display: fallback;
-}
-
-@font-face {
-  font-family: "Merriweather";
-  src: url("../public/fonts/Merriweather-Bold.woff2") format("woff2");
+  font-family: "Mona Sans";
+  src: url("../public/fonts/Mona Sans/Mona-Sans-BoldItalic.woff2")
+      format("woff2 supports variations"),
+    url("../public/fonts/Mona Sans/Mona-Sans-BoldItalic.woff2")
+      format("woff2-variations");
+  font-weight: 200 900;
+  font-stretch: 75% 125%;
+  font-style: italic;
   font-weight: bold;
-  font-style: normal;
-  font-display: fallback;
 }
 
 @font-face {
-  font-family: "Merriweather";
-  src: url("../public/fonts/Merriweather-BoldItalic.woff2") format("woff2");
-  font-weight: bold;
-  font-style: italic;
-  font-display: fallback;
-}
-
-@font-face {
-  font-family: "Merriweather";
-  src: url("../public/fonts/Merriweather-Light.woff2") format("woff2");
-  font-weight: 300;
-  font-style: normal;
-  font-display: fallback;
-}
-
-@font-face {
-  font-family: "Merriweather";
-  src: url("../public/fonts/Merriweather-LightItalic.woff2") format("woff2");
-  font-weight: 300;
-  font-style: italic;
-  font-display: fallback;
+  font-family: "Hubot Sans";
+  src: url("../public/fonts/Hubot Sans/Hubot-Sans.woff2")
+      format("woff2 supports variations"),
+    url("../public/fonts/Hubot Sans/Hubot-Sans.woff2")
+      format("woff2-variations");
+  font-weight: 200 900;
+  font-stretch: 75% 125%;
 }
 
 :root {
+  --site-max-width: 65rem;
+  --list-padding: 40px;
+
+  --4px: 0.25rem;
   --8px: 0.5rem;
   --10px: 0.625rem;
   --12px: 0.75rem;
@@ -109,9 +99,8 @@ body[data-theme="dark"] {
 
 html,
 body {
-  font-family: Iowan Old Style, Apple Garamond, Baskerville, Times New Roman,
-    Droid Serif, Times, Source Serif Pro, serif, Apple Color Emoji,
-    Segoe UI Emoji, Segoe UI Symbol;
+  font-family: "Mona Sans";
+  font-stretch: 102%;
   padding: 0;
   margin: 0;
   line-height: 1.6;
@@ -134,12 +123,18 @@ h6 {
 }
 
 h1 {
+  text-transform: uppercase;
+  font-family: "Hubot Sans";
+  font-stretch: 125%;
+  font-weight: 657;
   font-size: var(--36px);
 }
 
 h2 {
-  font-size: var(--25px);
-  line-height: var(--23px);
+  font-family: "Hubot Sans";
+  font-stretch: 110%;
+  font-size: var(--32px);
+  line-height: var(--32px);
   color: var(--accent-color);
   margin-top: var(--64px);
   margin-bottom: var(--12px);
@@ -155,8 +150,8 @@ h2 a:hover {
 }
 
 h3 {
-  font-size: var(--21px);
-  line-height: var(--21px);
+  font-size: var(--25px);
+  line-height: var(--25px);
   margin-top: var(--36px);
   margin-bottom: var(--12px);
 }
@@ -180,7 +175,7 @@ h6 {
 
 a {
   color: var(--pop-color);
-  font-weight: bold;
+  font-weight: 500;
   text-decoration: underline 0.15rem rgba(0, 0, 0, 0);
   transition: text-decoration-color 300ms;
 }
@@ -205,9 +200,17 @@ li {
 }
 
 table {
+  font-size: var(--16px);
   width: 100%;
   border-bottom: 1px solid var(--separator);
   border-collapse: collapse;
+  margin-bottom: var(--36px);
+}
+
+ul table,
+ol table {
+  margin-left: calc(0px - var(--list-padding));
+  width: calc(100vw - 2 * var(--main-content-inline-padding));
 }
 
 table thead th,

@@ -16,13 +16,17 @@
   flex-grow: 1;
 }
 
-.postsList li {
-  padding: 12px 0px;
-}
-
 .blogTitle {
   color: var(--primary-color);
   margin: 0;
+  margin-bottom: var(--16px);
+  letter-spacing: 105%;
+}
+
+.postPreviews {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 24px;
 }
 
 .separator {

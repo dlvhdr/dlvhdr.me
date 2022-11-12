@@ -1,4 +1,8 @@
 .root {
+  display: block;
+  background: var(--card-color);
+  padding: 24px 36px;
+  border-radius: 8px;
   max-width: 32rem;
 }
 
@@ -7,10 +11,12 @@
 }
 
 .titleText {
+  font-family: "Hubot Sans";
   margin-top: 8px;
-  margin-bottom: var(--8px);
+  margin-bottom: 0px;
 }
 
 .preface {
   font-size: var(--18px);
+  font-weight: 350;
 }

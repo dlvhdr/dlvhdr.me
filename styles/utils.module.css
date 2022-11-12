@@ -8,7 +8,8 @@
   margin: 0 0 1.25rem;
 }
 
-.subtext {
+.subtext time {
   color: var(--dimmed-color);
-  font-size: 0.825rem;
+  font-size: var(--12px);
+  font-variation-settings: "ital" 3, "wdth" 125;
 }
