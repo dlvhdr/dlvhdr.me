@@ -29,6 +29,12 @@
   gap: 24px;
 }
 
+@media (max-width: 800px) {
+  .postPreviews {
+    grid-template-columns: 1fr;
+  }
+}
+
 .separator {
   width: 1px;
   background: var(--separator);

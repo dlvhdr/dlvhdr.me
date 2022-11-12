@@ -20,3 +20,9 @@
   font-size: var(--18px);
   font-weight: 350;
 }
+
+@media (max-width: 800px) {
+  .root {
+    max-width: 100vw;
+  }
+}
