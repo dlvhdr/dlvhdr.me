@@ -59,6 +59,7 @@
   --23px: 1.4375rem;
   --24px: 1.5rem;
   --25px: 1.5625rem;
+  --28px: 1.8rem;
   --32px: 2rem;
   --36px: 2.25rem;
   --48px: 3rem;
@@ -133,8 +134,8 @@ h1 {
 h2 {
   font-family: "Hubot Sans";
   font-stretch: 110%;
-  font-size: var(--32px);
-  line-height: var(--32px);
+  font-size: var(--25px);
+  line-height: var(--25px);
   color: var(--accent-color);
   margin-top: var(--64px);
   margin-bottom: var(--12px);
@@ -207,10 +208,12 @@ table {
   margin-bottom: var(--36px);
 }
 
-ul table,
-ol table {
-  margin-left: calc(0px - var(--list-padding));
-  width: calc(100vw - 2 * var(--main-content-inline-padding));
+@media (max-width: 480px) {
+  ul table,
+  ol table {
+    margin-left: calc(0px - var(--list-padding));
+    width: calc(100vw - 2 * var(--main-content-inline-padding));
+  }
 }
 
 table thead th,

@@ -1,8 +1,9 @@
 .content {
   font-size: var(--20px);
-  max-width: var(--site-max-width);
+  max-width: 55rem;
   padding: 24px 0px;
   word-break: break-word;
+  margin: 0 auto;
 }
 
 .content p {
