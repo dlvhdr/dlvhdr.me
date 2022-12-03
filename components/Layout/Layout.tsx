@@ -9,19 +9,25 @@ import RssIcon from "../Icons/RssIcon";
 import SunIcon from "../Icons/SunIcon";
 import MoonIcon from "../Icons/MoonIcon";
 import { useTheme } from "../../context/ThemeContext";
+import classNames from "classnames";
 
 export const siteTitle = "Dolev Hadar";
 
 type LayoutProps = {
   children: React.ReactNode;
   home?: boolean;
+  wide?: boolean;
 };
 
-export default function Layout({ children, home = false }: LayoutProps) {
+export default function Layout({
+  children,
+  home = false,
+  wide = false,
+}: LayoutProps) {
   const { theme, setTheme } = useTheme();
 
   return (
-    <div className={styles.container}>
+    <div className={classNames(styles.container, { [styles.wide]: wide })}>
       <Head>
         <link rel="icon" href="/favicon.ico" />
         <meta name="description" content={siteTitle} />

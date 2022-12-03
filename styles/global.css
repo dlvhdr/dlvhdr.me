@@ -70,10 +70,11 @@
 
 body[data-theme="light"] {
   --bg-color: #fffcf9;
-  --card-color: #f6f4f4;
+  --card-color: #f4f1f1;
   --separator: #bfc0c9;
   --primary-color: #011731;
   --dimmed-color: #4d515f;
+  --dimmed-fg-color: #31333d;
   --pop-color: #287eff;
   --accent-color: #1c3682;
   --light-accent-color: #2f54c2;

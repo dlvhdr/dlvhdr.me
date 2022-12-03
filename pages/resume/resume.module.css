@@ -1,0 +1,132 @@
+.root {
+  --timeline-width: 9ch;
+
+  font-size: var(--18px);
+  padding: 24px 0px;
+  word-break: break-word;
+  margin: 0 auto;
+}
+
+.root h2 {
+  font-size: var(--28px);
+  margin-top: var(--48px);
+  text-transform: uppercase;
+}
+
+.root h3 {
+  margin-top: var(--16px);
+}
+
+.root ul {
+  list-style-type: arrow-right;
+  padding-left: var(--list-padding);
+  margin-top: var(--16px);
+}
+
+.root ul li::marker {
+  color: var(--light-accent-color);
+}
+
+.headerInfo {
+  display: flex;
+  font-size: var(--16px);
+  gap: 24px;
+}
+
+.headerInfoBit {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+}
+
+.companyDesc {
+  background: var(--card-color);
+  padding: 6px 12px;
+  border-radius: 4px;
+  color: var(--dimmed-fg-color);
+  font-size: var(--16px);
+  position: relative;
+}
+
+.companyDesc::before {
+  content: "";
+  display: block;
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 2px;
+  height: 100%;
+  background: var(--dimmed-color);
+  border-radius: 4px;
+}
+
+.timeline {
+  position: relative;
+  display: flex;
+  gap: 28px;
+}
+
+.timelineLeft {
+  border-right: solid var(--separator) 2px;
+  border-radius: 2px;
+  height: calc(100% - 75px);
+  width: 1px;
+  margin-top: var(--28px);
+  position: absolute;
+  left: -28px;
+}
+
+.timelinePoint {
+  color: var(--dimmed-color);
+  font-size: var(--12px);
+  font-variation-settings: "ital" 3, "wdth" 125;
+}
+
+a.linkedin {
+  color: var(--primary-color);
+}
+
+.languages {
+  margin-top: var(--36px);
+}
+
+.languages ul {
+  padding-left: var(--12px);
+  display: flex;
+  flex-direction: row;
+  gap: 36px;
+  list-style-type: disc;
+}
+
+.githubProject {
+  display: flex;
+  gap: 12px;
+  align-items: center;
+}
+
+.stars {
+  font-size: var(--16px);
+}
+
+.githubProjectLink {
+  margin-top: 12px;
+  display: flex;
+  gap: 8px;
+  align-items: center;
+}
+
+.githubProjectLink a {
+  color: var(--pop-color);
+  font-size: var(--16px);
+}
+
+@media (max-width: 1250px) {
+  .timelineLeft {
+    display: none;
+  }
+
+  .headerInfo {
+    flex-wrap: wrap;
+    gap: 12px;
+  }
+}

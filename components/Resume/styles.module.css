@@ -1,0 +1,90 @@
+.root {
+  position: relative;
+}
+
+.timelinePointAnchor {
+  display: flex;
+  flex-direction: row;
+  gap: 10px;
+  align-items: baseline;
+}
+
+.years {
+  margin-bottom: var(--16px);
+  position: absolute;
+  top: var(--16px);
+  left: -123px;
+  width: 14ch;
+  text-align: right;
+  display: block;
+  padding-right: 10px;
+}
+
+.years::after {
+  content: "";
+  display: block;
+  position: absolute;
+  right: -9px;
+  top: calc(50% - 4px);
+  height: 8px;
+  width: 8px;
+  border-radius: 50%;
+  background: var(--pop-color);
+}
+
+.root ul {
+  list-style-type: arrow-right;
+  padding-left: var(--list-padding);
+  margin-top: var(--16px);
+}
+
+.root ul li::marker {
+  color: var(--light-accent-color);
+}
+
+.root ul.technologies {
+  display: flex;
+  flex-direction: row;
+  gap: 8px;
+  flex-wrap: wrap;
+  margin-left: 0;
+  padding-left: 0;
+}
+
+.technologies li {
+  list-style-type: none;
+  color: var(--dimmed-fg-color);
+  background: var(--separator);
+  padding: 0px 8px;
+  border-radius: 4px;
+  margin-bottom: 0px;
+  font-size: var(--14px);
+}
+
+.root .header {
+  display: flex;
+}
+
+.yearsSmall {
+  display: none;
+}
+
+@media (max-width: 1250px) {
+  .yearsSmall {
+    margin-top: -6px;
+    display: block;
+  }
+
+  .years {
+    display: none;
+  }
+
+  .root.timePeriodRoot .years {
+    display: block;
+    position: static;
+    width: auto;
+  }
+  .root.timePeriodRoot .years::after {
+    display: none;
+  }
+}
