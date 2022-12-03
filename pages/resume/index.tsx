@@ -24,6 +24,17 @@ export default function Resume() {
               dolevc2@gmail.com
             </span>
             <span className={styles.headerInfoBit}>
+              <img src="images/person.svg" height="20px" width="20px" />
+              <a
+                className={styles.linkedin}
+                href="https://dlvhdr.me"
+                target="_blank"
+                rel="noreferrer"
+              >
+                https://dlvhdr.me
+              </a>
+            </span>
+            <span className={styles.headerInfoBit}>
               <LinkedInIcon size="small" />
               <a
                 className={styles.linkedin}
