@@ -127,7 +127,6 @@ export default function Resume() {
                 "Microfrontends",
               ]}
             >
-              <h5>Velo</h5>
               <p className={styles.companyDesc}>
                 <a
                   href="https://www.wix.com/velo"
