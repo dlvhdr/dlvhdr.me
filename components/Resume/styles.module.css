@@ -2,36 +2,6 @@
   position: relative;
 }
 
-.timelinePointAnchor {
-  display: flex;
-  flex-direction: row;
-  gap: 10px;
-  align-items: baseline;
-}
-
-.years {
-  margin-bottom: var(--16px);
-  position: absolute;
-  top: var(--16px);
-  left: -123px;
-  width: 14ch;
-  text-align: right;
-  display: block;
-  padding-right: 10px;
-}
-
-.years::after {
-  content: "";
-  display: block;
-  position: absolute;
-  right: -9px;
-  top: calc(50% - 4px);
-  height: 8px;
-  width: 8px;
-  border-radius: 50%;
-  background: var(--pop-color);
-}
-
 .root ul {
   list-style-type: arrow-right;
   padding-left: var(--list-padding);
@@ -54,7 +24,7 @@
 .technologies li {
   list-style-type: none;
   color: var(--dimmed-fg-color);
-  background: var(--separator);
+  background: var(--pill);
   padding: 0px 8px;
   border-radius: 4px;
   margin-bottom: 0px;
@@ -65,26 +35,24 @@
   display: flex;
 }
 
-.yearsSmall {
-  display: none;
+.years {
+  display: block;
 }
 
-@media (max-width: 1250px) {
-  .yearsSmall {
-    margin-top: -6px;
-    display: block;
-  }
+.companyHeader {
+  display: flex;
+  align-items: baseline;
+  gap: 1ch;
+}
 
-  .years {
-    display: none;
-  }
+.companyHeader h3 {
+  margin-bottom: 0px;
+}
 
-  .root.timePeriodRoot .years {
-    display: block;
-    position: static;
-    width: auto;
-  }
-  .root.timePeriodRoot .years::after {
-    display: none;
-  }
+.timePeriodRoot h4 {
+  margin-bottom: 6px;
+}
+
+.timePeriodRoot .years {
+  margin-bottom: 6px;
 }

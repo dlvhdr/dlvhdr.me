@@ -1,15 +1,17 @@
 .root {
   --timeline-width: 9ch;
 
-  font-size: var(--18px);
-  padding: 24px 0px;
+  display: flex;
+  flex-direction: row;
+  font-size: var(--16px);
   word-break: break-word;
   margin: 0 auto;
+  gap: 24px;
 }
 
 .root h2 {
   font-size: var(--28px);
-  margin-top: var(--48px);
+  margin-top: var(--36px);
   text-transform: uppercase;
 }
 
@@ -27,10 +29,34 @@
   color: var(--light-accent-color);
 }
 
+.sidebar {
+  min-width: 380px;
+  width: 380px;
+  padding: 20px;
+  background: var(--card-color);
+}
+
+.sidebar h1 {
+  margin-top: 0px;
+}
+
+.sidebar h4 {
+  margin-top: var(--36px);
+}
+
+.content {
+  padding-top: 20px;
+}
+
+.content h2:first-child {
+  margin-top: 10px;
+}
+
 .headerInfo {
   display: flex;
   font-size: var(--16px);
-  gap: 24px;
+  gap: 12px;
+  flex-wrap: wrap;
 }
 
 .headerInfoBit {
@@ -60,34 +86,11 @@
   border-radius: 4px;
 }
 
-.timeline {
-  position: relative;
-  display: flex;
-  gap: 28px;
-}
-
-.timelineLeft {
-  border-right: solid var(--separator) 2px;
-  border-radius: 2px;
-  height: calc(100% - 75px);
-  width: 1px;
-  margin-top: var(--28px);
-  position: absolute;
-  left: -28px;
-}
-
-.timelinePoint {
-  color: var(--dimmed-color);
-  font-size: var(--12px);
-  font-variation-settings: "ital" 3, "wdth" 125;
-}
-
 a.linkedin {
   color: var(--primary-color);
 }
 
 .languages {
-  margin-top: var(--36px);
 }
 
 .languages ul {
@@ -101,11 +104,11 @@ a.linkedin {
 .githubProject {
   display: flex;
   gap: 12px;
-  align-items: center;
+  align-items: baseline;
 }
 
 .stars {
-  font-size: var(--16px);
+  font-size: var(--14px);
 }
 
 .githubProjectLink {
@@ -120,13 +123,6 @@ a.linkedin {
   font-size: var(--16px);
 }
 
-@media (max-width: 1250px) {
-  .timelineLeft {
-    display: none;
-  }
-
-  .headerInfo {
-    flex-wrap: wrap;
-    gap: 12px;
-  }
+.root li {
+  margin-bottom: 0px;
 }

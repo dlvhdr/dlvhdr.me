@@ -14,11 +14,11 @@ export default function TimePeriod(props: Props) {
   return (
     <div className={classNames(styles.root, styles.timePeriodRoot)}>
       <div className={styles.timelinePointAnchor}>
-        <h3>{name}</h3>
-        <span className={classNames(utilStyles.subtext, styles.years)}>
-          {years[0]} - {years[1]}
-        </span>
+        <h4>{name}</h4>
       </div>
+      <span className={classNames(utilStyles.subtext, styles.years)}>
+        {years[0]} - {years[1]}
+      </span>
       <p>{children}</p>
     </div>
   );

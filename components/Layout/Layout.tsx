@@ -17,12 +17,16 @@ type LayoutProps = {
   children: React.ReactNode;
   home?: boolean;
   wide?: boolean;
+  hideNav?: boolean;
+  hideFooter?: boolean;
 };
 
 export default function Layout({
   children,
   home = false,
   wide = false,
+  hideNav = false,
+  hideFooter = false,
 }: LayoutProps) {
   const { theme, setTheme } = useTheme();
 
@@ -33,37 +37,47 @@ export default function Layout({
         <meta name="description" content={siteTitle} />
         <meta name="og:title" content={siteTitle} />
       </Head>
-      <nav className={styles.nav}>
-        <div className={styles.navContainer}>
-          <div className={styles.dlvhdr}>
-            <Link href="/">
-              <a>DLVHDR</a>
-            </Link>
+      {hideNav ? null : (
+        <nav className={styles.nav}>
+          <div className={styles.navContainer}>
+            <div className={styles.dlvhdr}>
+              <Link href="/">
+                <a>DLVHDR</a>
+              </Link>
+            </div>
+            <a href="/rss/feed.xml" target="_blank" rel="noreferrer">
+              <RssIcon />
+            </a>
+            <a
+              href="https://twitter.com/dlvhdr"
+              target="_blank"
+              rel="noreferrer"
+            >
+              <TwitterIcon />
+            </a>
+            <a
+              href="https://github.com/dlvhdr"
+              target="_blank"
+              rel="noreferrer"
+            >
+              <GithubIcon />
+            </a>
+            <a
+              href="https://www.linkedin.com/in/dolev-hadar/"
+              target="_blank"
+              rel="noreferrer"
+            >
+              <LinkedInIcon />
+            </a>
+            <button
+              className={styles.themeButton}
+              onClick={() => setTheme(theme === "light" ? "dark" : "light")}
+            >
+              {theme === "light" ? <SunIcon /> : <MoonIcon />}
+            </button>
           </div>
-          <a href="/rss/feed.xml" target="_blank" rel="noreferrer">
-            <RssIcon />
-          </a>
-          <a href="https://twitter.com/dlvhdr" target="_blank" rel="noreferrer">
-            <TwitterIcon />
-          </a>
-          <a href="https://github.com/dlvhdr" target="_blank" rel="noreferrer">
-            <GithubIcon />
-          </a>
-          <a
-            href="https://www.linkedin.com/in/dolev-hadar/"
-            target="_blank"
-            rel="noreferrer"
-          >
-            <LinkedInIcon />
-          </a>
-          <button
-            className={styles.themeButton}
-            onClick={() => setTheme(theme === "light" ? "dark" : "light")}
-          >
-            {theme === "light" ? <SunIcon /> : <MoonIcon />}
-          </button>
-        </div>
-      </nav>
+        </nav>
+      )}
       <main className={styles.mainContent}>
         {children}
         {!home && (
@@ -74,11 +88,13 @@ export default function Layout({
           </div>
         )}
       </main>
-      <div className={styles.email}>
-        dolevc2@gmail.com
-        <br />
-        &copy; 2020-present Dolev Hadar. All Rights Reserved.
-      </div>
+      {hideFooter ? null : (
+        <div className={styles.email}>
+          dolevc2@gmail.com
+          <br />
+          &copy; 2020-present Dolev Hadar. All Rights Reserved.
+        </div>
+      )}
     </div>
   );
 }

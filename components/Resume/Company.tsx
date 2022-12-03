@@ -16,16 +16,13 @@ export default function Company(props: Props) {
   const { name, years, role, children, technologies } = props;
   return (
     <section className={styles.root}>
-      <span className={classNames(utilStyles.subtext, styles.years)}>
-        {years[0]} - {years[1]}
-      </span>
-      <div className={styles.timelinePointAnchor}>
+      <div className={styles.companyHeader}>
         <h3>{name}</h3>
         <span>{role}</span>
+        <span className={classNames(utilStyles.subtext, styles.yearsSmall)}>
+          {years[0]} - {years[1]}
+        </span>
       </div>
-      <span className={classNames(utilStyles.subtext, styles.yearsSmall)}>
-        {years[0]} - {years[1]}
-      </span>
       <ul className={styles.technologies}>
         {technologies.map((tech) => (
           <li>{tech}</li>

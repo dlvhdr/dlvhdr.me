@@ -5,88 +5,101 @@ import Layout from "../../components/Layout/Layout";
 import Company from "../../components/Resume/Company";
 import TimePeriod from "../../components/Resume/TimePeriod";
 import styles from "./resume.module.css";
+import utilStyles from "../../styles/utils.module.css";
+import classNames from "classnames";
 
 export default function Resume() {
   return (
-    <Layout home={true}>
-      <a href="/api/pdf" download="generated_pdf.pdf" className="downloadBtn">
-        Download PDF
-      </a>
+    <Layout home={true} wide={true} hideNav={true} hideFooter={true}>
       <div className={styles.root}>
-        <h1>Dolev Hadar</h1>
-        <div className={styles.headerInfo}>
-          <span className={styles.headerInfoBit}>
-            <img src="images/location.svg" height="20px" width="20px" />
-            Tel Aviv, Israel
-          </span>
-          <span className={styles.headerInfoBit}>
-            <img src="images/email.svg" height="20px" width="20px" />
-            dolevc2@gmail.com
-          </span>
-          <span className={styles.headerInfoBit}>
-            <LinkedInIcon size="small" />
-            <a
-              className={styles.linkedin}
-              href="https://www.linkedin.com/in/dolev-hadar/"
-              target="_blank"
-              rel="noreferrer"
-            >
-              Linkedin
-            </a>
-          </span>
-          <span className={styles.headerInfoBit}>
-            <GithubIcon size="small" />
-            <a
-              className={styles.linkedin}
-              href="https://github.com/dlvhdr"
-              target="_blank"
-              rel="noreferrer"
-            >
-              GitHub
-            </a>
-          </span>
-        </div>
-        <h2>Summary</h2>
-        <ul>
-          <li>
-            Full stack engineer with 10 years of experience in global hi-tech
-            companies
-          </li>
-          <li>
-            Front end oriented with extensive knowledge in TypeScript, React,
-            React Native, GraphQL, Relay, Redux etc.
-          </li>
-          <li>Backend skills include Node.js, Go, Bash, Docker etc.</li>
-          <li>
-            Self learner, can lead projects from planning to execution, team
-            player
-          </li>
-        </ul>
-        <div>
-          <h2>Projects</h2>
-          <div className={styles.githubProject}>
-            <h3>gh-dash</h3>
-            <span className={styles.stars}>⭐ 3k</span>
+        <div className={styles.sidebar}>
+          <h1>Dolev Hadar</h1>
+          <div className={styles.headerInfo}>
+            <span className={styles.headerInfoBit}>
+              <img src="images/location.svg" height="20px" width="20px" />
+              Tel Aviv, Israel
+            </span>
+            <span className={styles.headerInfoBit}>
+              <img src="images/email.svg" height="20px" width="20px" />
+              dolevc2@gmail.com
+            </span>
+            <span className={styles.headerInfoBit}>
+              <LinkedInIcon size="small" />
+              <a
+                className={styles.linkedin}
+                href="https://www.linkedin.com/in/dolev-hadar/"
+                target="_blank"
+                rel="noreferrer"
+              >
+                Linkedin
+              </a>
+            </span>
+            <span className={styles.headerInfoBit}>
+              <GithubIcon size="small" />
+              <a
+                className={styles.linkedin}
+                href="https://github.com/dlvhdr"
+                target="_blank"
+                rel="noreferrer"
+              >
+                GitHub
+              </a>
+            </span>
           </div>
-          <p>
-            A GitHub CLI extension to display a dashboard with pull requests and
-            issues by filters you care about.
-          </p>
-          <p className={styles.githubProjectLink}>
-            <GithubIcon size="small" />
-            <a
-              className={styles.linkedin}
-              href="https://github.com/dlvhdr/gh-dash"
-              target="_blank"
-              rel="noreferrer"
-            >
-              GitHub
-            </a>
-          </p>
+          <div>
+            <div className={styles.githubProject}>
+              <h4>
+                Project -{" "}
+                <a
+                  className={styles.linkedin}
+                  href="https://github.com/dlvhdr/gh-dash"
+                  target="_blank"
+                  rel="noreferrer"
+                >
+                  <code>gh-dash</code>
+                </a>
+              </h4>
+              <span className={classNames(styles.stars, utilStyles.subtext)}>
+                ⭐ 3k
+              </span>
+            </div>
+            <p>
+              A GitHub CLI extension to display a dashboard with pull requests
+              and issues by filters you care about.
+            </p>
+          </div>
+          <TimePeriod name="Technion University" years={[2012, 2016]}>
+            BSc. in Computer Science.
+          </TimePeriod>
+          <TimePeriod name="Military Service - Air Force" years={[2008, 2011]}>
+            Anti-aircraft launcher operator. Full time military service.
+          </TimePeriod>
+          <div className={styles.languages}>
+            <h4>Languages</h4>
+            <ul>
+              <li>Hebrew – native</li>
+              <li>English – fluent</li>
+            </ul>
+          </div>
         </div>
-        <h2>Experience</h2>
-        <div className={styles.timeline}>
-          <div className={styles.timelineLeft}></div>
+        <div className={styles.content}>
+          <h2>Summary</h2>
+          <ul>
+            <li>
+              Full stack engineer with 10 years of experience in global hi-tech
+              companies
+            </li>
+            <li>
+              Front end oriented with extensive knowledge in TypeScript, React,
+              React Native, GraphQL, Relay, Redux etc.
+            </li>
+            <li>Backend skills include Node.js, Go, Bash, Docker etc.</li>
+            <li>
+              Self learner, can lead projects from planning to execution, team
+              player
+            </li>
+          </ul>
+          <h2>Experience</h2>
           <div>
             <Company
               name="Wix"
@@ -100,7 +113,6 @@ export default function Resume() {
                 "Serverless",
                 "gRPC",
                 "Docker",
-                "Grafana",
                 "Microfrontends",
               ]}
             >
@@ -118,8 +130,8 @@ export default function Resume() {
               </p>
               <ul>
                 <li>
-                  Worked on the Velo online IDE and implemented autocompletions,
-                  linting
+                  Worked on the Velo online IDE and implemented autocompletions
+                  and linting
                 </li>
                 <li>
                   Led the project to auto-update type definitions for Wix NPM
@@ -146,15 +158,12 @@ export default function Resume() {
                 "Relay",
                 "React Native",
                 "Go",
-                "Node.js",
-                "Hack (PHP dialect)",
+                "Hack",
                 "Android",
                 "Docker",
                 "Kibana",
-                "Storybook",
               ]}
             >
-              <h5>FBC Symphony</h5>
               <p className={styles.companyDesc}>
                 <a
                   href="https://www.facebook.com/connectivity/"
@@ -190,7 +199,6 @@ export default function Resume() {
                   components
                 </li>
               </ul>
-              <h5>Express Wi-Fi</h5>
               <p className={styles.companyDesc}>
                 <a
                   href="https://expresswifi.fb.com/"
@@ -246,22 +254,7 @@ export default function Resume() {
                 Power/performance web-app using PrimeFaces.
               </p>
             </Company>
-            <h2>Education</h2>
-            <TimePeriod name="Technion University" years={[2012, 2016]}>
-              BSc. in Computer Science.
-            </TimePeriod>
-            <h2>Military Service</h2>
-            <TimePeriod name="Air Force" years={[2008, 2011]}>
-              Anti-aircraft launcher operator. Full time military service.
-            </TimePeriod>
           </div>
-        </div>
-        <div className={styles.languages}>
-          <h2>Languages</h2>
-          <ul>
-            <li>Hebrew – native</li>
-            <li>English – fluent</li>
-          </ul>
         </div>
       </div>
     </Layout>

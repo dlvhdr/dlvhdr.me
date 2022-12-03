@@ -71,6 +71,7 @@
 body[data-theme="light"] {
   --bg-color: #fffcf9;
   --card-color: #f4f1f1;
+  --pill: #d3d4de;
   --separator: #bfc0c9;
   --primary-color: #011731;
   --dimmed-color: #4d515f;
