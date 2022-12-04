@@ -17,67 +17,65 @@ type LayoutProps = {
   children: React.ReactNode;
   home?: boolean;
   wide?: boolean;
-  hideNav?: boolean;
-  hideFooter?: boolean;
+  className?: string;
+  navClassName?: string;
+  footerClassName?: string;
 };
 
 export default function Layout({
   children,
+  className,
+  navClassName,
+  footerClassName,
   home = false,
   wide = false,
-  hideNav = false,
-  hideFooter = false,
 }: LayoutProps) {
   const { theme, setTheme } = useTheme();
 
   return (
-    <div className={classNames(styles.container, { [styles.wide]: wide })}>
+    <div
+      className={classNames(
+        styles.container,
+        { [styles.wide]: wide },
+        className
+      )}
+    >
       <Head>
         <link rel="icon" href="/favicon.ico" />
         <meta name="description" content={siteTitle} />
         <meta name="og:title" content={siteTitle} />
       </Head>
-      {hideNav ? null : (
-        <nav className={styles.nav}>
-          <div className={styles.navContainer}>
-            <div className={styles.dlvhdr}>
-              <Link href="/">
-                <a>DLVHDR</a>
-              </Link>
-            </div>
-            <a href="/rss/feed.xml" target="_blank" rel="noreferrer">
-              <RssIcon />
-            </a>
-            <a
-              href="https://twitter.com/dlvhdr"
-              target="_blank"
-              rel="noreferrer"
-            >
-              <TwitterIcon />
-            </a>
-            <a
-              href="https://github.com/dlvhdr"
-              target="_blank"
-              rel="noreferrer"
-            >
-              <GithubIcon />
-            </a>
-            <a
-              href="https://www.linkedin.com/in/dolev-hadar/"
-              target="_blank"
-              rel="noreferrer"
-            >
-              <LinkedInIcon />
-            </a>
-            <button
-              className={styles.themeButton}
-              onClick={() => setTheme(theme === "light" ? "dark" : "light")}
-            >
-              {theme === "light" ? <SunIcon /> : <MoonIcon />}
-            </button>
+      <nav className={classNames(styles.nav, navClassName)}>
+        <div className={styles.navContainer}>
+          <div className={styles.dlvhdr}>
+            <Link href="/">
+              <a>DLVHDR</a>
+            </Link>
           </div>
-        </nav>
-      )}
+          <a href="/rss/feed.xml" target="_blank" rel="noreferrer">
+            <RssIcon />
+          </a>
+          <a href="https://twitter.com/dlvhdr" target="_blank" rel="noreferrer">
+            <TwitterIcon />
+          </a>
+          <a href="https://github.com/dlvhdr" target="_blank" rel="noreferrer">
+            <GithubIcon />
+          </a>
+          <a
+            href="https://www.linkedin.com/in/dolev-hadar/"
+            target="_blank"
+            rel="noreferrer"
+          >
+            <LinkedInIcon />
+          </a>
+          <button
+            className={styles.themeButton}
+            onClick={() => setTheme(theme === "light" ? "dark" : "light")}
+          >
+            {theme === "light" ? <SunIcon /> : <MoonIcon />}
+          </button>
+        </div>
+      </nav>
       <main className={styles.mainContent}>
         {children}
         {!home && (
@@ -88,13 +86,11 @@ export default function Layout({
           </div>
         )}
       </main>
-      {hideFooter ? null : (
-        <div className={styles.email}>
-          dolevc2@gmail.com
-          <br />
-          &copy; 2020-present Dolev Hadar. All Rights Reserved.
-        </div>
-      )}
+      <div className={classNames(styles.email, footerClassName)}>
+        dolevc2@gmail.com
+        <br />
+        &copy; 2020-present Dolev Hadar. All Rights Reserved.
+      </div>
     </div>
   );
 }

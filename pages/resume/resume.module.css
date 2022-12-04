@@ -126,3 +126,13 @@ a.linkedin {
 .root li {
   margin-bottom: 0px;
 }
+
+@media print {
+  .layout .layoutNav {
+    display: none;
+  }
+
+  .layout .layoutFooter {
+    display: none;
+  }
+}

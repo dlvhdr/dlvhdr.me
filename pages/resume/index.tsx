@@ -10,7 +10,13 @@ import classNames from "classnames";
 
 export default function Resume() {
   return (
-    <Layout home={true} wide={true} hideNav={true} hideFooter={true}>
+    <Layout
+      className={styles.layout}
+      navClassName={styles.layoutNav}
+      footerClassName={styles.layoutFooter}
+      home={true}
+      wide={true}
+    >
       <div className={styles.root}>
         <div className={styles.sidebar}>
           <h1>Dolev Hadar</h1>

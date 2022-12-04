@@ -25,7 +25,7 @@ export default function Company(props: Props) {
       </div>
       <ul className={styles.technologies}>
         {technologies.map((tech) => (
-          <li>{tech}</li>
+          <li key={tech}>{tech}</li>
         ))}
       </ul>
       {children}
