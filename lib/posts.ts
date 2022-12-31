@@ -66,6 +66,7 @@ export async function getPostData(id: string): Promise<PostData> {
   const source = await serialize(content, {
     mdxOptions: {
       remarkPlugins: [remarkGfm],
+      development: false,
     },
   });
 

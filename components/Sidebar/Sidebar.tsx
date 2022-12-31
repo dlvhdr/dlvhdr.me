@@ -22,8 +22,8 @@ export default function Sidebar({ className, posts }: SidebarProps) {
             <span className={styles.date}>
               <Date dateString={post.date} />
             </span>
-            <Link href={`/posts/${post.id}`}>
-              <a className={styleUtils.headingSm}>{post.title}</a>
+            <Link href={`/posts/${post.id}`} className={styleUtils.headingSm}>
+              {post.title}
             </Link>
           </li>
         ))}

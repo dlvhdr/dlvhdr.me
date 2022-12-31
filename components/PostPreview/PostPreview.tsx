@@ -22,7 +22,7 @@ export default function PostPreview({
       <div className={styles.titleContainer}>
         <h2 className={styles.titleText}>
           <Link href={`/posts/${id}`} passHref={true}>
-            <a>{title}</a>
+            {title}
           </Link>
         </h2>
         <span className={utilStyles.subtext}>

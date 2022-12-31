@@ -49,7 +49,7 @@ export default function Layout({
         <div className={styles.navContainer}>
           <div className={styles.dlvhdr}>
             <Link href="/">
-              <a>DLVHDR</a>
+              DLVHDR
             </Link>
           </div>
           <a href="/rss/feed.xml" target="_blank" rel="noreferrer">
@@ -81,7 +81,7 @@ export default function Layout({
         {!home && (
           <div className={styles.backToHome}>
             <Link href="/">
-              <a>← Back</a>
+              ← Back
             </Link>
           </div>
         )}
