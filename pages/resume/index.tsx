@@ -120,7 +120,7 @@ export default function Resume() {
           <div>
             <Company
               name="Wix"
-              years={[2021, 2023]}
+              years={[2021]}
               role="Front End Developer"
               technologies={[
                 "React",

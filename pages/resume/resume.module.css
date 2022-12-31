@@ -128,6 +128,17 @@ a.linkedin {
 }
 
 @media print {
+  @page {
+    size: A4;
+    margin: 0;
+  }
+
+  .layout {
+    zoom: 72%;
+    -webkit-print-color-adjust: exact !important;
+    print-color-adjust: exact !important;
+  }
+
   .layout .layoutNav {
     display: none;
   }

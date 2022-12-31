@@ -6,7 +6,7 @@ import classNames from "classnames";
 type Props = {
   name: string;
   icon?: React.ReactNode;
-  years: [number, number];
+  years: [number, number] | [number];
   role: string;
   technologies: string[];
   children?: React.ReactNode;
@@ -20,7 +20,7 @@ export default function Company(props: Props) {
         <h3>{name}</h3>
         <span>{role}</span>
         <span className={classNames(utilStyles.subtext, styles.yearsSmall)}>
-          {years[0]} - {years[1]}
+          {years[0]} - {years?.[1] || "Current"}
         </span>
       </div>
       <ul className={styles.technologies}>
