@@ -1,34 +1,34 @@
-@font-face {
-  font-family: "Mona Sans";
-  src: url("../public/fonts/Mona Sans/Mona-Sans.woff2")
-      format("woff2 supports variations"),
-    url("../public/fonts/Mona Sans/Mona-Sans.woff2") format("woff2-variations");
-  font-weight: 200 900;
-  font-stretch: 75% 125%;
-}
-
-@font-face {
-  font-family: "Mona Sans";
-  src: url("../public/fonts/Mona Sans/Mona-Sans-RegularItalic.woff2")
-      format("woff2 supports variations"),
-    url("../public/fonts/Mona Sans/Mona-Sans-RegularItalic.woff2")
-      format("woff2-variations");
-  font-weight: regular;
-  font-stretch: 75% 125%;
-  font-style: italic;
-}
-
-@font-face {
-  font-family: "Mona Sans";
-  src: url("../public/fonts/Mona Sans/Mona-Sans-BoldItalic.woff2")
-      format("woff2 supports variations"),
-    url("../public/fonts/Mona Sans/Mona-Sans-BoldItalic.woff2")
-      format("woff2-variations");
-  font-weight: 200 900;
-  font-stretch: 75% 125%;
-  font-style: italic;
-  font-weight: bold;
-}
+/* @font-face { */
+/*   font-family: "Mona Sans"; */
+/*   src: url("../public/fonts/Mona Sans/Mona-Sans.woff2") */
+/*       format("woff2 supports variations"), */
+/*     url("../public/fonts/Mona Sans/Mona-Sans.woff2") format("woff2-variations"); */
+/*   font-weight: 200 900; */
+/*   font-stretch: 75% 125%; */
+/* } */
+/**/
+/* @font-face { */
+/*   font-family: "Mona Sans"; */
+/*   src: url("../public/fonts/Mona Sans/Mona-Sans-RegularItalic.woff2") */
+/*       format("woff2 supports variations"), */
+/*     url("../public/fonts/Mona Sans/Mona-Sans-RegularItalic.woff2") */
+/*       format("woff2-variations"); */
+/*   font-weight: regular; */
+/*   font-stretch: 75% 125%; */
+/*   font-style: italic; */
+/* } */
+/**/
+/* @font-face { */
+/*   font-family: "Mona Sans"; */
+/*   src: url("../public/fonts/Mona Sans/Mona-Sans-BoldItalic.woff2") */
+/*       format("woff2 supports variations"), */
+/*     url("../public/fonts/Mona Sans/Mona-Sans-BoldItalic.woff2") */
+/*       format("woff2-variations"); */
+/*   font-weight: 200 900; */
+/*   font-stretch: 75% 125%; */
+/*   font-style: italic; */
+/*   font-weight: bold; */
+/* } */
 
 @font-face {
   font-family: "Hubot Sans";
