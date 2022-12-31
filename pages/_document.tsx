@@ -14,8 +14,10 @@ export default function Document() {
     document.body.dataset.theme = getUserPreference();
   `;
   return (
-    <Html>
-      <Head />
+    <Html lang="en">
+      <Head>
+        <meta name="viewport" content="width=device-width, initial-scale=1" />
+      </Head>
       <body>
         <script dangerouslySetInnerHTML={{ __html: setInitialTheme }} />
         <Main />

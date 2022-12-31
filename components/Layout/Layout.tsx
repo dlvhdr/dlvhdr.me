@@ -48,29 +48,46 @@ export default function Layout({
       <nav className={classNames(styles.nav, navClassName)}>
         <div className={styles.navContainer}>
           <div className={styles.dlvhdr}>
-            <Link href="/">
+            <Link href="/" aria-label="Go to home page">
               DLVHDR
             </Link>
           </div>
-          <a href="/rss/feed.xml" target="_blank" rel="noreferrer">
+          <a
+            href="/rss/feed.xml"
+            target="_blank"
+            rel="noreferrer"
+            aria-label="RSS Feed"
+          >
             <RssIcon />
           </a>
-          <a href="https://twitter.com/dlvhdr" target="_blank" rel="noreferrer">
+          <a
+            href="https://twitter.com/dlvhdr"
+            target="_blank"
+            rel="noreferrer"
+            aria-label="@dlvhdr Twitter Account"
+          >
             <TwitterIcon />
           </a>
-          <a href="https://github.com/dlvhdr" target="_blank" rel="noreferrer">
+          <a
+            href="https://github.com/dlvhdr"
+            target="_blank"
+            rel="noreferrer"
+            aria-label="@dlvhdr GitHub Account"
+          >
             <GithubIcon />
           </a>
           <a
             href="https://www.linkedin.com/in/dolev-hadar/"
             target="_blank"
             rel="noreferrer"
+            aria-label="Dolev Hadar's LinkedIn Account"
           >
             <LinkedInIcon />
           </a>
           <button
             className={styles.themeButton}
             onClick={() => setTheme(theme === "light" ? "dark" : "light")}
+            aria-label="Toggle Light/Dark Theme"
           >
             {theme === "light" ? <SunIcon /> : <MoonIcon />}
           </button>
@@ -80,9 +97,7 @@ export default function Layout({
         {children}
         {!home && (
           <div className={styles.backToHome}>
-            <Link href="/">
-              ← Back
-            </Link>
+            <Link href="/">← Back</Link>
           </div>
         )}
       </main>

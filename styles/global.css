@@ -41,13 +41,13 @@ body[data-theme="light"] {
 }
 
 body[data-theme="dark"] {
-  --bg-color: #011731;
-  --card-color: #323540;
+  --bg-color: #000b19;
+  --card-color: #001023;
   --separator: #323540;
   --primary-color: #fffcf9;
   --dimmed-color: #e1e2ed;
-  --pop-color: #ca9efa;
-  --accent-color: #a19efe;
+  --pop-color: #c899ff;
+  --accent-color: #3292ff;
   --light-accent-color: #7673d1;
   --code-bg-color: #011627;
 }
