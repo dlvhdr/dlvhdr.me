@@ -1,7 +1,9 @@
+import Head from "next/head";
 import { ThemeProvider } from "../context/ThemeContext";
-import "../styles/global.css";
 import classNames from "classnames";
 import localFont from "@next/font/local";
+
+import "../styles/global.css";
 
 const monaSans = localFont({
   variable: "--mona-sans",
@@ -34,6 +36,9 @@ const hubotSans = localFont({
 export default function App({ Component, pageProps }) {
   return (
     <ThemeProvider>
+      <Head>
+        <meta name="viewport" content="width=device-width, initial-scale=1" />
+      </Head>
       <main className={classNames(monaSans.className, hubotSans.className)}>
         <Component {...pageProps} />
       </main>
