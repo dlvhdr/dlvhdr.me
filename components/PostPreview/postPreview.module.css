@@ -11,7 +11,7 @@
 }
 
 .titleText {
-  font-family: "Hubot Sans";
+  font-family: var(--hubot-sans);
   margin-top: 8px;
   margin-bottom: 0px;
 }
