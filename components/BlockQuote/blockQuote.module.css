@@ -4,10 +4,10 @@
   border-radius: 8px;
   overflow-x: auto;
   position: relative;
-  color: var(--dimmed-color);
+  color: var(--dimmed-fg-color);
   font-style: italic;
   margin-block: 36px;
-  font-variation-settings: "ital" 3, "wdth" 100;
+  font-variation-settings: "ital" 25, "wdth" 100;
 }
 
 .blockquote p {

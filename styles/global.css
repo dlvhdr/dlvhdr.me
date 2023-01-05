@@ -32,7 +32,7 @@ body[data-theme="light"] {
   --pill: #d3d4de;
   --separator: #bfc0c9;
   --primary-color: #011731;
-  --dimmed-color: #4d515f;
+  --dimmed-color: #b3b5c1;
   --dimmed-fg-color: #31333d;
   --pop-color: #287eff;
   --accent-color: #1c3682;
@@ -46,6 +46,7 @@ body[data-theme="dark"] {
   --separator: #323540;
   --primary-color: #fffcf9;
   --dimmed-color: #e1e2ed;
+  --dimmed-fg-color: #b3b5c1;
   --pop-color: #c899ff;
   --accent-color: #3292ff;
   --light-accent-color: #7673d1;

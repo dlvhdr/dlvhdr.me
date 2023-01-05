@@ -18,8 +18,8 @@ export default function PostPreview({
   preface,
 }: PostPreviewProps) {
   return (
-    <li className={styles.root}>
-      <div className={styles.titleContainer}>
+    <article className={styles.root}>
+      <section className={styles.titleContainer}>
         <h2 className={styles.titleText}>
           <Link href={`/posts/${id}`} passHref={true}>
             {title}
@@ -28,8 +28,8 @@ export default function PostPreview({
         <span className={utilStyles.subtext}>
           <Date dateString={date} />
         </span>
-      </div>
+      </section>
       <p className={styles.preface}>{preface}</p>
-    </li>
+    </article>
   );
 }

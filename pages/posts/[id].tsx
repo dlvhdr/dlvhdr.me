@@ -36,12 +36,12 @@ export default function Post({ postData }: PostProps) {
       </Head>
       <Layout home={false}>
         <article className={styles.content}>
-          <div className={styles.header}>
+          <section className={styles.header}>
             <h1 className={styles.title}>{title}</h1>
             <div className={utilStyles.subtext}>
               <Date dateString={date} />
             </div>
-          </div>
+          </section>
           <MDXRemote {...source} components={components} />
         </article>
       </Layout>

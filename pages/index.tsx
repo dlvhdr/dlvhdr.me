@@ -14,7 +14,7 @@ type HomeProps = {
 
 export default function Home({ allPostsData }: HomeProps) {
   return (
-    <Layout home={true}>
+    <>
       <Head>
         <title>{siteTitle}</title>
         <meta
@@ -23,19 +23,20 @@ export default function Home({ allPostsData }: HomeProps) {
           content="Dolev Hadar's personal website. I'm a web developer who sometimes likes to write about code."
         />
       </Head>
-      <main className={styles.mainContent}>
-        <section className={styles.posts}>
-          <div className={classNames(styles.postsList, utilStyles.list)}>
-            <h1 className={styles.blogTitle}>Blog Posts 📖</h1>
-            <ul className={styles.postPreviews}>
-              {allPostsData.map((post) => (
-                <PostPreview key={post.id} {...post} />
-              ))}
-            </ul>
-          </div>
+      <Layout
+        home={true}
+        contentClassName={classNames(styles.posts, styles.mainContent)}
+      >
+        <section className={classNames(styles.postsList, utilStyles.list)}>
+          <h1 className={styles.blogTitle}>Blog Posts 📖</h1>
+          <section className={styles.postPreviews}>
+            {allPostsData.map((post) => (
+              <PostPreview key={post.id} {...post} />
+            ))}
+          </section>
         </section>
-      </main>
-    </Layout>
+      </Layout>
+    </>
   );
 }
 
