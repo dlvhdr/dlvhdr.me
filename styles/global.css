@@ -195,3 +195,7 @@ hr {
   border: none;
   height: 1px;
 }
+
+em {
+  font-variation-settings: "ital" 25, "wdth" 100;
+}
