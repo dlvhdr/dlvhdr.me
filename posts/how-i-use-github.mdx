@@ -1,0 +1,173 @@
+---
+title: "My Git & GitHub workflow - an efficient yet messy setup"
+date: "2024-02-09"
+preface: "Git is a complex tool that offers a lot. Maybe to make sense of it we need a lot of tools? This is my terminal based setup."
+tags:  git, github, blog, dlvhdr.me
+---
+
+I think my main goal with this blog post is to get help *making sense* and *minimizing* the amount of tools I'm using for Git and GitHub 🆘
+
+There are all these great tools out there but there's always something missing, unnecessary friction or something that's possible but requires way too much effort.
+
+Git is a *complex* tool that offers **a lot** and maybe to make sense of it we need **a lot** of tools.
+
+The unix philosophy of having many tools where each does one thing and does it well could work here,  but I find that many of the tools I use overlap. I have to keep using all of them as each one has an esoteric and specialized use-case.
+
+Maybe some reader can help me make sense of this jungle of tools and simplify it.
+
+## TLDR; List of the Tools I'm Using
+
+- git aliases
+- [lazygit](https://github.com/jesseduffield/lazygit) - my main workflow of adding and comitting changes
+- [tig](https://github.com/jonas/tig) - for viewing git log across different branches more easily
+- [Graphite](https://graphite.dev/) - to work with stacked PRs
+- [gh-dash](https://github.com/dlvhdr/gh-dash) - to easily view PRs/Issues from repos I care about
+- Neovim plugins
+  - [advanced-git-search.nvim](https://github.com/aaronhallaert/advanced-git-search.nvim) - to browse a file's history and search the log
+  - [diffview.nvim](https://github.com/sindrets/diffview.nvim) - to solve merge conflicts, compare branches inside neovim etc.
+  - [gh-addressed.nvim](https://github.com/dlvhdr/gh-addressed.nvim) - to go over my PR's comments and fix them
+  - [gh-blame.nvim](https://github.com/dlvhdr/gh-blame.nvim) - to show me the PR that changed the current line
+  - [gitlinker](https://github.com/linrongbin16/gitlinker.nvim) - to copy links to GitHub of the current file
+  - [gitsigns](https://github.com/lewis6991/gitsigns.nvim) - for working with git hunks (reverting, committing etc), inline git blame,
+  - [octo.nvim](https://github.com/pwntester/octo.nvim) - for reviewing PRs
+  - [vim-fugitive] - mainly for git blame
+- [Raycast](http://raycast.com/) - to search code on GitHub (a shortcut to open `https://github.com/search?type=code&q=""$1"`
+- [fish](https://fishshell.com) abbreviations and functions
+
+All of these tools configurations can be found in [my dotfiles repo](https://github.com/dlvhdr/dotfiles).
+
+I'm just going to list how I use each tool now :)
+
+## The Git CLI
+
+- `g` is *obviously* set up as a fish abbreviation for `git`
+- I have a [`git` fish function](https://github.com/dlvhdr/dotfiles/blob/main/.config/fish/functions/git.fish?plain=1#L2) such that running it without any arguments just gives the status
+- I set up a different email for my work and personal emails using the `[includeIf]` [git config directive](https://github.com/dlvhdr/dotfiles/blob/main/.config/git/config?plain=1#L8)
+- I set up a [1password GPG signing using SSH](https://github.com/dlvhdr/dotfiles/blob/main/.config/git/config?plain=1#L31)
+- I have [this `git yolo` alias](https://github.com/dlvhdr/dotfiles/blob/fe403588480f2c8087e1f2e5070b636ba1186cd9/.config/git/config?plain=1#L179) for when I just want to commit stuff with a random commit message (uses https://whatthecommit.com)
+- I use [delta](https://github.com/dandavison/delta) to have nicer syntax highlighting for various git commands
+- I set up git's [rerere](https://git-scm.com/book/en/v2/Git-Tools-Rerere) so that I don't have to repeat solving the same merge conflicts
+- I try to remember to set up [git maintenance](https://blog.gitbutler.com/git-tips-2-new-stuff-in-git/#git-maintenance) following Chris's awesome blog post
+- I set up an alias for [better git blame](https://github.com/dlvhdr/dotfiles/blob/fe403588480f2c8087e1f2e5070b636ba1186cd9/.config/git/config?plain=1#L157) (same blog post as above ☝🏼)
+- And I have a bunch of [other aliases](https://github.com/dlvhdr/dotfiles/blob/main/.config/git/config?plain=1#L125) I rarely use
+
+For my full `git` config [check it out on GitHub](https://github.com/dlvhdr/dotfiles/blob/main/.config/git/config?plain=1#L1)
+
+## Lazygit
+
+My main workflow revolves around using [lazygit](https://github.com/jesseduffield/lazygit).
+
+I have it bound to <kbd>CMD+G</kbd> in `tmux` so that I can always globally open it, quickly add files by hitting `a` and commiting them with `c`.
+
+<Note>
+See [Josh Medeski's blog post](https://www.joshmedeski.com/posts/macos-keyboard-shortcuts-for-tmux/) on how to set up MacOS style shortcuts in `tmux`.
+</Note>
+
+![lazygit|700](https://github.com/jesseduffield/lazygit/blob/assets/demo/commit_and_push-compressed.gif?raw=true)
+
+## Tig
+
+I often find myself needing to see how different branches relate to each other and for that I use [`tig`](https://github.com/jonas/tig).
+
+It helped me tremendously when at a previous company I wanted to migrate away from poly-repos into **one big `monorepo`**. The migration was made possible in part by utilizing `tig` to make sure the `git` history was kept intact.
+
+<img width="900px" src="/images/git-github/tig.png" />
+
+There's probably **a lot more** to tig that I'm not utilizing.
+
+## Stacked PRs with Graphite
+
+I really love working with stacked PRs.
+
+That's the methodology I used when working in Facebook. It has some really great benefits like staying unblocked by not waiting for a review and helps with writing smaller PRs.
+
+For a while I've been using Graphite to work like this. Graphite has a [great blog article](https://graphite.dev/blog/stacked-prs) about it if you want to learn more.
+
+After I started my new role at [Komodor](https://komodor.com/) I found this doesn't work well under the SOC2 compliance framework.
+
+This framework basically assures potential customers that they're buying into a serious company that follows the best security guidelines and won't leak their data etc.
+
+Unfortunately, this also means worse developer experience. One of the rules is that a PR must always be approved and that each new commit dismisses old approvals, requiring it to be stamped again.
+
+That meant I could no longer use `Graphite` to split my PRs as it uses force pushes. These force pushes dismiss any approval I had. These were mainly happening when I rebased a stack on top of `main`, without any *real changes* being made.
+
+I still find myself using Graphite' though for quickly checking out branches with an FZF-like interface: ![[gco.gif|800]]
+
+<img width="800px" src="/images/git-github/gco.gif" />
+
+## [gh-dash](https://github.com/dlvhdr/gh-dash)
+
+I use gh-dash to easily view PRs/Issues from repos I care about.
+
+I really don't like GitHub's https://github.com/pulls page. It barely gives me the info I need, so I wrote gh-dash to solve that issue.
+
+As with `lazygit` I have `gh-dash` bound to <kbd>CMD+Shift+G</kbd> in `tmux` so I can globally get to it ([see my tmux config](https://github.com/dlvhdr/dotfiles/blob/fe403588480f2c8087e1f2e5070b636ba1186cd9/.config/tmux/tmux.conf?plain=1#L72))
+
+With it:
+
+- I can quickly go between viewing my work related PRs, my personal projects etc.
+- I set up the <kbd>C</kbd> hotkey to [quickly review a PR in neovim](https://github.com/dlvhdr/dotfiles/blob/fe403588480f2c8087e1f2e5070b636ba1186cd9/.config/gh-dash/config.yml?plain=1#L77)
+- I often use the `w` hotkey to watch a PRs status checks and notify me when they're done
+
+What I'd like to add:
+- A richer view for a PR - similar to the full page on GitHub.
+- A way to approve PRs - should be easy
+- The ability to quickly toggle `is:archived` on off
+
+![gh-dash image](/images/git-github/gh-dash.png)
+
+# Neovim Setup
+
+  - [advanced-git-search.nvim](https://github.com/aaronhallaert/advanced-git-search.nvim) - to search in the repo's commits/log/line history
+
+<img width="800px" src="/images/git-github/git-advanced-search.png" />
+
+  - [diffview.nvim](https://github.com/sindrets/diffview.nvim) - to solve merge conflicts, compare branches inside neovim etc.
+
+<img width="800px" src="/images/git-github/diffview.png" />
+
+  - [gh-addressed.nvim](https://github.com/dlvhdr/gh-addressed.nvim) - to go over my PR's comments and fix them.
+
+<img width="800px" src="/images/git-github/gh-addressed.png" />
+
+  - [gh-blame.nvim](https://github.com/dlvhdr/gh-blame.nvim) - to show me the PR that changed the current line !
+
+  <img width="800px" src="/images/git-github/gh-blame.png" />
+
+  - [gitlinker](https://github.com/linrongbin16/gitlinker.nvim) - to copy links to GitHub of the current file. I used this extensively in writing this blog post for linking to my code.
+
+  <img width="800px" src="/images/git-github/gitlinker.png" />
+
+  - [gitsigns](https://github.com/lewis6991/gitsigns.nvim) - for working with git hunks (reverting, committing etc), inline git blame 
+
+  <img width="800px" src="/images/git-github/gitsigns.png" />
+
+  - [octo.nvim](https://github.com/pwntester/octo.nvim) - for reviewing PRs. Leaving comments straight in Neovim is *magical* ✨ ![|700](https://user-images.githubusercontent.com/125701/124568138-e8cfb180-de44-11eb-994a-0791d8be63ad.gif)
+  - [vim-fugitive](https://github.com/tpope/vim-fugitive) - mainly for git blame. I wish something like this existed but for GitHub blame. I often find PRs to be a lot richer with information about the change.
+
+  <img width="800px" src="/images/git-github/git-fugitive.png" />
+
+## Raycast
+
+I use [Raycast](http://raycast.com/) to search code on GitHub (a shortcut to open `https://github.com/search?type=code&q=""$1"`)
+
+Racast is pretty awesome.
+
+  <img width="800px" src="/images/git-github/raycast.gif" />
+
+## What I'm Still Missing
+
+- Moaarrrr tools that replace the use of Github.com. I truly dislike their slow page loads.
+  - GitHub blame in neovim pls
+  - Github code search in nvim pretty pls
+  - In general, I wonder what will happen if sites were ported natively to the terminal
+- lazygit in rust (I'm missing like 200ms off the startup time)
+- A way to search git commit diffs for a string in neovim
+
+## Recap
+
+These are **a lot**, yet I remember to use each one when I need it.
+
+- Did I forget something you're using?
+- Are there simpler/more powerful ways to do the same stuff?
+- Am I mad for using all of these tools? 🫠
