@@ -18,7 +18,7 @@ export default function Resume() {
       wide={true}
     >
       <div className={styles.root}>
-        <div className={styles.sidebar}>
+        <div className={styles.headerForSmallScreens}>
           <h1>Dolev Hadar</h1>
           <div className={styles.headerInfo}>
             <span className={styles.headerInfoBit}>
@@ -63,6 +63,55 @@ export default function Resume() {
               </a>
             </span>
           </div>
+        </div>
+
+        <div className={styles.sidebar}>
+          <div className={styles.title}>
+            <h1>Dolev Hadar</h1>
+            <div className={styles.headerInfo}>
+              <span className={styles.headerInfoBit}>
+                <img src="images/location.svg" height="20px" width="20px" />
+                Tel Aviv, Israel
+              </span>
+              <span className={styles.headerInfoBit}>
+                <img src="images/email.svg" height="20px" width="20px" />
+                dolevc2@gmail.com
+              </span>
+              <span className={styles.headerInfoBit}>
+                <img src="images/person.svg" height="20px" width="20px" />
+                <a
+                  className={styles.linkedin}
+                  href="https://dlvhdr.me"
+                  target="_blank"
+                  rel="noreferrer"
+                >
+                  https://dlvhdr.me
+                </a>
+              </span>
+              <span className={styles.headerInfoBit}>
+                <LinkedInIcon size="small" />
+                <a
+                  className={styles.linkedin}
+                  href="https://www.linkedin.com/in/dolev-hadar/"
+                  target="_blank"
+                  rel="noreferrer"
+                >
+                  Linkedin
+                </a>
+              </span>
+              <span className={styles.headerInfoBit}>
+                <GithubIcon size="small" />
+                <a
+                  className={styles.linkedin}
+                  href="https://github.com/dlvhdr"
+                  target="_blank"
+                  rel="noreferrer"
+                >
+                  GitHub
+                </a>
+              </span>
+            </div>
+          </div>
           <div>
             <div className={styles.githubProject}>
               <h4>
@@ -77,7 +126,7 @@ export default function Resume() {
                 </a>
               </h4>
               <span className={classNames(styles.stars, utilStyles.subtext)}>
-                ⭐ 3k
+                ⭐ 6k
               </span>
             </div>
             <p>
@@ -103,25 +152,62 @@ export default function Resume() {
           <h2>Summary</h2>
           <ul>
             <li>
-              Full stack engineer with 10 years of experience in global hi-tech
+              Full stack engineer with 10+ years of experience in global hi-tech
               companies
             </li>
             <li>
               Front end oriented with extensive knowledge in TypeScript, React,
-              React Native, GraphQL, Relay, Redux etc.
+              React Native, GraphQL, Redux, Zustand etc.
             </li>
-            <li>Backend skills include Node.js, Go, Bash, Docker etc.</li>
             <li>
-              Self learner, can lead projects from planning to execution, team
-              player
+              Backend skills include Node.js, Go, Swagger, Docker, K8s, Bash
+              etc.
+            </li>
+            <li>
+              Self learner, love to lead big projects from planning to
+              execution, team player
             </li>
           </ul>
           <h2>Experience</h2>
           <div>
             <Company
+              name="Komodor"
+              role="Full Stack Developer"
+              years={[2023]}
+              technologies={[
+                "React",
+                "Zustand",
+                "react-query",
+                "Go",
+                "Python",
+                "PostgreSQL",
+                "Kubernetes",
+                "Swagger",
+              ]}
+            >
+              <ul>
+                <li>
+                  Working on the company's{" "}
+                  <a href="https://komodor.com/">
+                    <i>Kubernets for Humans</i>
+                  </a>{" "}
+                  webapp and microservices as a fullstack developer
+                </li>
+                <li>
+                  Led multiple features from PRD to implementation, both heavily
+                  backend oriented and frontend pixel-perfect ones
+                </li>
+                <li>
+                  Improved our developer experience and code quality standards
+                  significantly, from new-employee onboarding to day-to-day
+                  experience
+                </li>
+              </ul>
+            </Company>
+            <Company
               name="Wix"
-              years={[2021]}
-              role="Front End Developer"
+              years={[2021, 2023]}
+              role="Full Stack Developer"
               technologies={[
                 "React",
                 "Redux",
@@ -133,29 +219,23 @@ export default function Resume() {
                 "Microfrontends",
               ]}
             >
-              <p className={styles.companyDesc}>
-                <a
-                  href="https://www.wix.com/velo"
-                  target="_blank"
-                  rel="noreferrer"
-                >
-                  Velo
-                </a>{" "}
-                is a full-stack development platform that empowers you to
-                rapidly build, manage and deploy professional web apps.
-              </p>
               <ul>
                 <li>
-                  Worked on the Velo online IDE and implemented autocompletions
-                  and linting
+                  Initiated and led the{" "}
+                  <a href="https://www.wix.com/studio/developers">
+                    Wix Studio's online IDE
+                  </a>{" "}
+                  project that saw the move from a basic monaco based solution
+                  to a VSCode one
+                </li>
+                <li>
+                  The VSCode Online IDE work included spinning up the
+                  containerized IDE with custom autocompletions, linting and
+                  extensions
                 </li>
                 <li>
                   Led the project to auto-update type definitions for Wix NPM
                   packages <i>(was previously done manually)</i>
-                </li>
-                <li>
-                  Initiated and led the project to migrate from a simple monaco
-                  based IDE to an on-demand containerized online VSCode
                 </li>
                 <li>
                   Pushed implementing a modern programming model and helped the
@@ -171,7 +251,6 @@ export default function Resume() {
                 "React",
                 "Redux",
                 "GraphQL",
-                "Relay",
                 "React Native",
                 "Go",
                 "Hack",
@@ -180,18 +259,6 @@ export default function Resume() {
                 "Kibana",
               ]}
             >
-              <p className={styles.companyDesc}>
-                <a
-                  href="https://www.facebook.com/connectivity/"
-                  target="_blank"
-                  rel="noreferrer"
-                >
-                  FBC Symphony
-                </a>{" "}
-                is an open source SaaS solution for network operators that helps
-                them operate their network in regards to device and customer
-                management.
-              </p>
               <ul>
                 <li>
                   Acted as the project’s lead front-end engineer, writing the
@@ -214,19 +281,6 @@ export default function Resume() {
                   - drove the project of building a library of reusable base
                   components
                 </li>
-              </ul>
-              <p className={styles.companyDesc}>
-                <a
-                  href="https://expresswifi.fb.com/"
-                  target="_blank"
-                  rel="noreferrer"
-                >
-                  Express Wi-Fi
-                </a>{" "}
-                is a super-fast super-affordable internet service for the un-and
-                under-connected areas of the world (1M DAU)
-              </p>
-              <ul>
                 <li>
                   Worked on the customer, retailer and partner portals
                   (webapps). Sole developer of the React-Native{" "}
@@ -237,13 +291,11 @@ export default function Resume() {
                   >
                     Android app
                   </a>
-                  .
                 </li>
                 <li>
                   A standout project was implementing an extensible slice and
                   dice query UI that allowed creating custom queries over
-                  various metrics and entity tables (customers, retailers,
-                  etc.).
+                  various metrics and entity tables (customers, retailers, etc.)
                 </li>
               </ul>
             </Company>
@@ -263,12 +315,14 @@ export default function Resume() {
                 "CSS",
               ]}
             >
-              <p>
-                Worked at the CAD department on various projects: a Cache
-                Simulator Windows desktop app in C++ using Qt for the GUI, a
-                Thermal Analysis Platform for smartphones and a
-                Power/performance web-app using PrimeFaces.
-              </p>
+              <ul>
+                <li>
+                  Worked at the CAD department on various projects: a Cache
+                  Simulator Windows desktop app in C++ using Qt for the GUI, a
+                  Thermal Analysis Platform for smartphones and a
+                  Power/performance web-app using PrimeFaces.
+                </li>
+              </ul>
             </Company>
           </div>
         </div>

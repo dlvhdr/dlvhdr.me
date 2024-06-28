@@ -34,6 +34,7 @@ body[data-theme="light"] {
   --primary-color: #011731;
   --dimmed-color: #b3b5c1;
   --dimmed-fg-color: #31333d;
+  --dimmed-fg-color-2: #4d505e;
   --pop-color: #287eff;
   --accent-color: #1c3682;
   --light-accent-color: #2f54c2;
@@ -197,5 +198,7 @@ hr {
 }
 
 em {
-  font-variation-settings: "ital" 25, "wdth" 100;
+  font-variation-settings:
+    "ital" 25,
+    "wdth" 100;
 }

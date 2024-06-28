@@ -127,7 +127,59 @@ a.linkedin {
   margin-bottom: 0px;
 }
 
+.headerForSmallScreens {
+  display: none;
+}
+
+@media screen and (max-width: 1020px) {
+  .root {
+    flex-direction: column-reverse;
+  }
+
+  .root .headerForSmallScreens {
+    order: 1;
+  }
+
+  .headerInfo {
+    margin-top: -16px;
+  }
+
+  .sidebar {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 24px;
+    min-width: auto;
+    width: auto;
+    background: var(--card-color);
+    grid-template-columns: 1fr;
+  }
+
+  .sidebar h4 {
+    margin-top: 0;
+  }
+
+  .headerForSmallScreens {
+    display: block;
+  }
+
+  .sidebar .title {
+    display: none;
+  }
+
+  .sidebar {
+    bottom: 0;
+  }
+
+  .sidebar h1 {
+    margin-bottom: 0px;
+  }
+}
+
 @media print {
+  .root {
+    flex-direction: row;
+  }
+
   @page {
     size: A4;
     margin: 0;

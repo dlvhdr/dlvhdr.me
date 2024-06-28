@@ -1,6 +1,6 @@
 .mainContent {
   display: flex;
-  margin: 40px auto;
+  margin: 24px auto;
   flex-direction: column;
 }
 
@@ -14,13 +14,6 @@
   display: flex;
   flex-direction: column;
   flex-grow: 1;
-}
-
-.blogTitle {
-  color: var(--primary-color);
-  margin: 0;
-  margin-bottom: var(--16px);
-  letter-spacing: 105%;
 }
 
 .postPreviews {
@@ -42,9 +35,12 @@
 }
 
 .title {
+  margin-bottom: var(--36px);
+  margin-top: var(--36px);
+  color: var(--primary-color);
+  letter-spacing: 105%;
   font-weight: bold;
-  font-size: var(--48px);
-  margin: 0;
+  font-size: var(--36px);
 }
 
 .description {
@@ -67,4 +63,17 @@
   .description {
     margin-bottom: 30px;
   }
+}
+
+.aboutMe p {
+  line-height: 1.8;
+}
+
+.aboutMe > p > img {
+  display: inline;
+  margin-left: 4px;
+}
+
+.resume {
+  color: var(--dimmed-fg-color-2);
 }

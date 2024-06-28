@@ -8,7 +8,7 @@ type Props = {
   icon?: React.ReactNode;
   years: [number, number] | [number];
   role: string;
-  technologies: string[];
+  technologies?: string[];
   children?: React.ReactNode;
 };
 
@@ -23,11 +23,13 @@ export default function Company(props: Props) {
           {years[0]} - {years?.[1] || "Current"}
         </span>
       </div>
-      <ul className={styles.technologies}>
-        {technologies.map((tech) => (
-          <li key={tech}>{tech}</li>
-        ))}
-      </ul>
+      {technologies && technologies.length > 0 ? (
+        <ul className={styles.technologies}>
+          {technologies.map((tech) => (
+            <li key={tech}>{tech}</li>
+          ))}
+        </ul>
+      ) : null}
       {children}
     </section>
   );
