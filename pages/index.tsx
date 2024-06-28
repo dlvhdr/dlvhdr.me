@@ -45,9 +45,8 @@ export default function Home({ allPostsData }: HomeProps) {
             </p>
             <p className={styles.resume}>
               <i>
-                For a more detailed info about my technical skills and
-                experience, take a look at my{" "}
-                <Link href={"/resume"}>resume</Link>.
+                For more info about my technical skills and experience, check
+                out my <Link href={"/resume"}>resume</Link>.
               </i>
             </p>
           </section>

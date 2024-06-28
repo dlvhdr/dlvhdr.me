@@ -16,6 +16,13 @@
   margin-bottom: 0px;
 }
 
+.titleText a {
+  -webkit-text-decoration: none;
+}
+.titleText a:hover {
+  -webkit-text-decoration: underline;
+}
+
 .preface {
   font-size: var(--18px);
   font-weight: 350;

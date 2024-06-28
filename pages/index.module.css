@@ -35,10 +35,11 @@
 }
 
 .title {
-  margin-bottom: var(--36px);
-  margin-top: var(--36px);
+  margin-bottom: var(--24px);
+  line-height: 1;
+  margin-top: 0px;
   color: var(--primary-color);
-  letter-spacing: 105%;
+  letter-spacing: 0.1125rem;
   font-weight: bold;
   font-size: var(--36px);
 }
@@ -63,6 +64,10 @@
   .description {
     margin-bottom: 30px;
   }
+}
+
+.aboutMe {
+  margin-bottom: var(--48px);
 }
 
 .aboutMe p {
