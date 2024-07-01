@@ -28,7 +28,7 @@
 
 body[data-theme="light"] {
   --bg-color: #ffffff;
-  --card-color: #ffffff;
+  --card-color: #f2f2f2;
   --pill: #d3d4de;
   --separator: #e4e4e7;
   --primary-color: #18181b;
@@ -43,7 +43,8 @@ body[data-theme="light"] {
 
 body[data-theme="dark"] {
   --bg-color: #09090b;
-  --card-color: #09090b;
+  --card-color: #17171c;
+  --pill: #323540;
   --separator: #323540;
   --primary-color: #ffffff;
   --dimmed-color: #e1e2ed;

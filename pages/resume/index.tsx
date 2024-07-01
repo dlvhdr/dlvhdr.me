@@ -7,6 +7,7 @@ import TimePeriod from "../../components/Resume/TimePeriod";
 import styles from "./resume.module.css";
 import utilStyles from "../../styles/utils.module.css";
 import classNames from "classnames";
+import Image from "next/image";
 
 export default function Resume() {
   return (
@@ -22,15 +23,39 @@ export default function Resume() {
           <h1>Dolev Hadar</h1>
           <div className={styles.headerInfo}>
             <span className={styles.headerInfoBit}>
-              <img src="images/location.svg" height="20px" width="20px" />
+              <Image
+                src="images/location.svg"
+                height={20}
+                width={20}
+                alt="Location"
+              />
               Tel Aviv, Israel
             </span>
             <span className={styles.headerInfoBit}>
-              <img src="images/email.svg" height="20px" width="20px" />
+              <Image
+                src="images/email.svg"
+                height={20}
+                width={20}
+                alt="email"
+              />
               dolevc2@gmail.com
             </span>
             <span className={styles.headerInfoBit}>
-              <img src="images/person.svg" height="20px" width="20px" />
+              <Image
+                src="images/phone.svg"
+                height={20}
+                width={20}
+                alt="phone"
+              />
+              +972547331893
+            </span>
+            <span className={styles.headerInfoBit}>
+              <Image
+                src="images/person.svg"
+                height={20}
+                width={20}
+                alt="person"
+              />
               <a
                 className={styles.linkedin}
                 href="https://dlvhdr.me"
@@ -70,15 +95,39 @@ export default function Resume() {
             <h1>Dolev Hadar</h1>
             <div className={styles.headerInfo}>
               <span className={styles.headerInfoBit}>
-                <img src="images/location.svg" height="20px" width="20px" />
+                <Image
+                  src="images/location.svg"
+                  height={20}
+                  width={20}
+                  alt="Location"
+                />
                 Tel Aviv, Israel
               </span>
               <span className={styles.headerInfoBit}>
-                <img src="images/email.svg" height="20px" width="20px" />
+                <Image
+                  src="images/email.svg"
+                  height={20}
+                  width={20}
+                  alt="email"
+                />
                 dolevc2@gmail.com
               </span>
               <span className={styles.headerInfoBit}>
-                <img src="images/person.svg" height="20px" width="20px" />
+                <Image
+                  src="images/phone.svg"
+                  height={20}
+                  width={20}
+                  alt="Phone"
+                />
+                +972547331893
+              </span>
+              <span className={styles.headerInfoBit}>
+                <Image
+                  src="images/person.svg"
+                  height={20}
+                  width={20}
+                  alt="person"
+                />
                 <a
                   className={styles.linkedin}
                   href="https://dlvhdr.me"

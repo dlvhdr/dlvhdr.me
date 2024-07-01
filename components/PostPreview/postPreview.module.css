@@ -1,6 +1,5 @@
 .root {
   display: block;
-  background: var(--card-color);
   padding: 24px 36px;
   border-radius: 8px;
   max-width: 32rem;

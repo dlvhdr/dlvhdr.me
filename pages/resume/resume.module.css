@@ -33,7 +33,6 @@
   min-width: 380px;
   width: 380px;
   padding: 20px;
-  background: var(--card-color);
 }
 
 .sidebar h1 {
@@ -131,6 +130,15 @@ a.linkedin {
   display: none;
 }
 
+body[data-theme="dark"] .headerInfo img {
+  filter: invert(100%) sepia(100%) saturate(1%) hue-rotate(223deg)
+    brightness(109%) contrast(101%);
+}
+
+body[data-theme="dark"] .headerInfo svg {
+  fill: white;
+}
+
 @media screen and (max-width: 1020px) {
   .root {
     flex-direction: column-reverse;
@@ -150,8 +158,8 @@ a.linkedin {
     gap: 24px;
     min-width: auto;
     width: auto;
-    background: var(--card-color);
     grid-template-columns: 1fr;
+    background: var(--card-color);
   }
 
   .sidebar h4 {
