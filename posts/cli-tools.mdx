@@ -1,0 +1,98 @@
+---
+title: "My Top CLI Tools"
+date: "2024-07-03"
+preface: "Recently I realize I've accumulated quite a few packages and wanted to do some cleaning and organizing. These are the ones I kept and find useful."
+---
+
+Recently I realize I've accumulated quite a few packages and wanted to do some cleaning and organizing.
+
+These are the ones I kept and find _useful._
+
+<Note>
+  Anything you think I might be missing out on? Let me know
+</Note>
+
+## I Always Forget about
+
+### Utilities
+
+- artprint - I use this to switch artworks in neovim's start screen
+	- `artprint --random -t "dlvhdr" --tc 5 --ac 4`
+- curlie - better curl
+- entr - run arbitrary commands when files change
+- procs - Modern replacement for `ps`
+	- `procs "$1" --no-header | awk -F '│' '{printf $1}{printf "│"}{print $3}' | gum choose --no-limit | awk '{print $1}' | xargs kill -9`
+- sd - intuitive find & replace (better `sed`)
+- mult - run a command multiple times and glance at the outputs
+	- Usually for flakey tests
+
+### Disk Management
+
+- dua-cli - view disk space usage and delete unwanted data, fast
+	- Run `dua i` for interactive mode
+- dust - more intuitive version of du in rust
+- kondo - save disk space by cleaning non-essential files from software projects
+
+### JSON
+
+- **jnv** - JSON navigator and interactive filter leveraging jq
+	- Probably the best of the bunch 👑
+- gojq - Pure go implementation of jq
+- fx - terminal JSON viewer
+- jless - command-line pager for JSON data
+- jqp - a TUI playground to experiment and play with jq
+
+### Logs
+
+- humanlog - pretty print and tail logs
+- tl (toolong) - a TUI to view, tail, merge, and search log files
+
+### Network
+
+- openapi-tui - terminal UI to list, browse and run APIs defined with OpenAPI
+
+### LLM
+
+- [mods](https://github.com/charmbracelet/mods) - AI on the command line
+- [tlm](https://github.com/yusufcanb/tlm) - terminal copilot, powered by CodeLLaMa.
+
+### Golang
+
+- [air](https://github.com/air-verse/air) - live reload for Go apps
+- [gowatch](https://github.com/silenceper/gowatch) - watcher for go app that restarts the app when you save a file
+	- e.g. when developing my CLI tool: `gowatch --args='--pr=https://github.com/neovim/neovim/pull/27082'`
+
+## Must Haves
+
+(that I don't need to think about)
+
+- fzf (Command-line fuzzy finder written in Go)
+- atuin (Improved shell history for zsh, bash, fish and nushell)
+- bat (Clone of cat(1) with syntax highlighting and Git integration)
+- bpytop (Linux/OSX/FreeBSD resource monitor)
+- clipboard (Cut, copy, and paste anything, anywhere, all from the terminal)
+- diff-so-fancy (Good-lookin' diffs with diff-highlight and more)
+- difftastic (Diff that understands syntax)
+- direnv (Load/unload environment variables based on $PWD)
+- eza (Modern, maintained replacement for ls)
+- fd (Simple, fast and user-friendly alternative to find)
+- gh (GitHub command-line tool)
+- glow (Render markdown on the CLI)
+- gum (Tool for glamorous shell scripts)
+- hyperfine (Command-line benchmarking tool)
+- lazydocker (Lazier way to manage everything docker)
+- mprocs (Run multiple commands in parallel)
+- nerdfix (Find/fix obsolete Nerd Font icons)
+- tig (Text interface for Git repositories)
+- yazi (Blazing fast terminal file manager written in Rust, based on async I/O)
+- caarlos0/tap/svu (Semantic Version Utility)
+- charmbracelet/tap/freeze (Generate images of code and terminal output.)
+- charmbracelet/tap/vhs (A tool for recording terminal GIFs)
+- isacikgoz/taps/tldr (fast and interactive tldr client written with go)
+- jesseduffield/lazygit/lazygit (A simple terminal UI for git commands, written in Go)
+- joshmedeski/sesh/sesh (Smart terminal session manager)
+- k9s - kubernetes CLI to manage your clusters in tyle!
+- timg - terminal image and video viewer
+- zoxide - shell extension to navigate your filesystem faster
+- markscribe
+
