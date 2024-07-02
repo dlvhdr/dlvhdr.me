@@ -33,6 +33,15 @@ export default function Resume() {
             </span>
             <span className={styles.headerInfoBit}>
               <Image
+                src="images/plane.svg"
+                height={20}
+                width={20}
+                alt="Airplane"
+              />
+              EU Citizen - open for relocation
+            </span>
+            <span className={styles.headerInfoBit}>
+              <Image
                 src="images/email.svg"
                 height={20}
                 width={20}
@@ -89,7 +98,6 @@ export default function Resume() {
             </span>
           </div>
         </div>
-
         <div className={styles.sidebar}>
           <div className={styles.title}>
             <h1>Dolev Hadar</h1>
@@ -102,6 +110,15 @@ export default function Resume() {
                   alt="Location"
                 />
                 Tel Aviv, Israel
+              </span>
+              <span className={styles.headerInfoBit}>
+                <Image
+                  src="images/plane.svg"
+                  height={20}
+                  width={20}
+                  alt="Airplane"
+                />
+                EU Citizen - open for relocation
               </span>
               <span className={styles.headerInfoBit}>
                 <Image
