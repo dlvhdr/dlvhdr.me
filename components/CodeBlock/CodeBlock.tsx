@@ -1,8 +1,6 @@
 import styles from "./codeBlock.module.css";
 import React from "react";
-import Highlight, { defaultProps, Language } from "prism-react-renderer";
-import nightOwlLight from "prism-react-renderer/themes/nightOwlLight";
-import nightOwlDark from "prism-react-renderer/themes/nightOwl";
+import { Highlight, themes, Language } from "prism-react-renderer";
 import classNames from "classnames";
 import { useTheme } from "../../context/ThemeContext";
 
@@ -16,8 +14,7 @@ export default function CodeBlock({ children }: JSX.IntrinsicElements["pre"]) {
   return (
     // @ts-ignore
     <Highlight
-      {...defaultProps}
-      theme={theme === "light" ? nightOwlLight : nightOwlDark}
+      theme={theme === "light" ? themes.nightOwlLight : themes.nightOwl}
       code={trimmed}
       language={language as Language}
     >
