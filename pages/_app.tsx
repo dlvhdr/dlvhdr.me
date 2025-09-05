@@ -1,7 +1,7 @@
 import Head from "next/head";
 import { ThemeProvider } from "../context/ThemeContext";
 import classNames from "classnames";
-import localFont from "@next/font/local";
+import localFont from "next/font/local";
 import { AppProps } from "next/app";
 
 import "../styles/global.css";
