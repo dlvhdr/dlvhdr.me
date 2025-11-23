@@ -8,6 +8,8 @@ import styles from "./index.module.css";
 import classNames from "classnames";
 import generateRssFeed from "../lib/generateRssFeed";
 import Link from "next/link";
+import { Enhance } from "../components/Projects/Enhance";
+import { Dash } from "../components/Projects/Dash";
 
 type HomeProps = {
   allPostsData: PostData[];
@@ -48,6 +50,23 @@ export default function Home({ allPostsData }: HomeProps) {
                 For more info about my technical skills and experience, check
                 out my <Link href={"/resume"}>resume</Link>.
               </i>
+            </p>
+          </section>
+          <section>
+            <h2 className={styles.title}>Projects</h2>
+            <ul className="flex flex-row gap-6">
+              <li>
+                <Dash />
+              </li>
+              <li>
+                <Enhance />
+              </li>
+            </ul>
+            <p className="!mt-0 !mb-16">
+              Some of my projects don't have fancy logos,{" "}
+              <a target="_blank" href="https://github.com/dlvhdr">
+                check them out!
+              </a>
             </p>
           </section>
           <h2 className={styles.title}>Blog Posts</h2>

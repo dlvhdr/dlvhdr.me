@@ -1,0 +1,16 @@
+.dash {
+  @reference "../../styles/global.css";
+  @apply text-xl leading-none lg:text-2xl pl-2;
+
+  text-decoration: none;
+  transform: skew(-20deg);
+  width: fit-content;
+  background-image: var(--hdr-gradient);
+  background-size: 100%;
+  background-clip: text;
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  -moz-background-clip: text;
+  -moz-text-fill-color: transparent;
+  background-repeat: repeat;
+}
