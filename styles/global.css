@@ -1,3 +1,5 @@
+@import "tailwindcss";
+
 :root {
   --site-max-width: 65rem;
   --list-padding: 40px;
@@ -39,20 +41,44 @@ body[data-theme="light"] {
   --accent-color: #18181b;
   --light-accent-color: #2f54c2;
   --code-bg-color: #f6f4f4;
+
+  --hdr-green-gradient: linear-gradient(
+    to right in oklab,
+    oklch(35% 0.5 145),
+    oklch(64% 0.5 178)
+  );
+
+  --hdr-gradient: linear-gradient(
+    to right in oklab,
+    oklch(16% 0.5 200) 0%,
+    oklch(65% 0.3 230) 100%
+  );
 }
 
 body[data-theme="dark"] {
-  --bg-color: #09090b;
+  --bg-color: oklch(0.13 0.028 261.692);
   --card-color: #17171c;
   --pill: #323540;
   --separator: #323540;
-  --primary-color: #ffffff;
+  --primary-color: oklch(87.2% 0.01 258.338);
   --dimmed-color: #e1e2ed;
   --dimmed-fg-color: #b3b5c1;
   --pop-color: #c899ff;
   --accent-color: #ffffff;
   --light-accent-color: #7673d1;
   --code-bg-color: #011627;
+
+  --hdr-green-gradient: linear-gradient(
+    to right in oklab,
+    oklch(0.8512 0.1937 154.97) 37% 17%,
+    oklch(0.7115 0.131 174.2)
+  );
+
+  --hdr-gradient: linear-gradient(
+    to right in oklab,
+    oklch(90% 0.5 200),
+    oklch(80% 0.3 230)
+  );
 }
 
 @counter-style arrow-right {
