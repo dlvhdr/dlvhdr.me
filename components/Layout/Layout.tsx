@@ -4,7 +4,7 @@ import styles from "./layout.module.css";
 import Link from "next/link";
 import GithubIcon from "../Icons/GithubIcon";
 import LinkedInIcon from "../Icons/LinkedInIcon";
-import TwitterIcon from "../Icons/TwitterIcon";
+import BlueskyIcon from "../Icons/BlueskyIcon";
 import RssIcon from "../Icons/RssIcon";
 import SunIcon from "../Icons/SunIcon";
 import MoonIcon from "../Icons/MoonIcon";
@@ -45,7 +45,7 @@ export default function Layout({
         className={classNames(
           styles.container,
           { [styles.wide]: wide },
-          className
+          className,
         )}
       >
         <nav className={classNames(styles.nav, navClassName)}>
@@ -64,12 +64,12 @@ export default function Layout({
               <RssIcon />
             </a>
             <a
-              href="https://twitter.com/dlvhdr"
+              href="https://bsky.app/profile/dlvhdr.me"
               target="_blank"
               rel="noreferrer"
-              aria-label="@dlvhdr Twitter Account"
+              aria-label="@dlvhdr Bluesky Account"
             >
-              <TwitterIcon />
+              <BlueskyIcon />
             </a>
             <a
               href="https://github.com/dlvhdr"

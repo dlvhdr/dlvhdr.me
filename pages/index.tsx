@@ -54,7 +54,7 @@ export default function Home({ allPostsData }: HomeProps) {
           </section>
           <section>
             <h2 className={styles.title}>Projects</h2>
-            <ul className="flex flex-row gap-6">
+            <ul className="flex flex-col lg:flex-row gap-2 lg:gap-6">
               <li>
                 <Dash />
               </li>
@@ -62,7 +62,7 @@ export default function Home({ allPostsData }: HomeProps) {
                 <Enhance />
               </li>
             </ul>
-            <p className="!mt-0 !mb-16">
+            <p className="mt-4! mb-16!">
               Some of my projects don't have fancy logos,{" "}
               <a target="_blank" href="https://github.com/dlvhdr">
                 check them out!

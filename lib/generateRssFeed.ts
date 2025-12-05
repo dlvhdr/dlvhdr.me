@@ -9,7 +9,7 @@ export default async function generateRssFeed() {
   const author = {
     name: "Dolev Hadar",
     email: "dolevc2@gmail.com",
-    link: "https://twitter.com/dlvhdr",
+    link: "https://bsky.app/profile/dlvhdr.me",
   };
 
   const feed = new Feed({
