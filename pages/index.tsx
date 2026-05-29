@@ -9,6 +9,7 @@ import classNames from "classnames";
 import generateRssFeed from "../lib/generateRssFeed";
 import Link from "next/link";
 import { Enhance } from "../components/Projects/Enhance";
+import { Diffnav } from "../components/Projects/Diffnav";
 import { Dash } from "../components/Projects/Dash";
 
 type HomeProps = {
@@ -54,12 +55,15 @@ export default function Home({ allPostsData }: HomeProps) {
           </section>
           <section>
             <h2 className={styles.title}>Projects</h2>
-            <ul className="flex flex-col lg:flex-row gap-2 lg:gap-6">
-              <li>
+            <ul className="grid md:grid-cols-2 gap-2 gap-y-1 lg:gap-y-4 lg:gap-6">
+              <li className="flex">
                 <Dash />
               </li>
-              <li>
+              <li className="flex">
                 <Enhance />
+              </li>
+              <li className="flex">
+                <Diffnav />
               </li>
             </ul>
             <p className="mt-4! mb-16!">

@@ -3,9 +3,9 @@ import styles from "./enhance.module.css";
 
 export const Enhance = ({}) => {
   return (
-    <div>
+    <div className="h-full w-full">
       <a href="https://gh-dash.dev/enhance" className="no-underline!">
-        <div className="rounded-lg flex w-full flex-row items-center gap-8 border border-(--separator) p-4 px-6 no-underline hover:bg-(--card-color) md:w-max">
+        <div className="rounded-lg flex h-full w-full flex-row items-start gap-8 border border-(--separator) p-4 px-6 no-underline hover:bg-(--card-color)">
           <div className="flex flex-col gap-4">
             <div className="inline-flex flex-col">
               <pre className={styles.enhance}>
@@ -13,7 +13,7 @@ export const Enhance = ({}) => {
                 <br />
                 ▐▛▁▐ ▚▌▐▔▌▐▔▌▐ ▚▌▐▁▁▐▛▁
               </pre>
-              <p className="mt-4! ml-1 p-0 text-sm text-(--primary-color) tracking-wide">
+              <p className="mt-4! ml-1 p-0 text-md font-normal text-(--primary-color)">
                 A Blazingly Fast Terminal UI for GitHub Actions
               </p>
             </div>

@@ -53,6 +53,16 @@ body[data-theme="light"] {
     oklch(16% 0.5 200) 0%,
     oklch(65% 0.3 230) 100%
   );
+
+  --hdr-green-red-gradient: linear-gradient(
+    90deg,
+    hsl(123deg 100% 47%) 1%,
+    hsl(80deg 100% 41%) 49%,
+    hsl(56deg 100% 37%) 51%,
+    hsl(37deg 100% 43%) 49%,
+    hsl(22deg 100% 47%) 51%,
+    hsl(356deg 100% 47%) 99%
+  );
 }
 
 body[data-theme="dark"] {
@@ -78,6 +88,16 @@ body[data-theme="dark"] {
     to right in oklab,
     oklch(90% 0.5 200),
     oklch(80% 0.3 230)
+  );
+
+  --hdr-green-red-gradient: linear-gradient(
+    90deg,
+    hsl(123deg 100% 47%) 1%,
+    hsl(80deg 100% 41%) 49%,
+    hsl(56deg 100% 37%) 51%,
+    hsl(37deg 100% 43%) 49%,
+    hsl(22deg 100% 47%) 51%,
+    hsl(356deg 100% 47%) 99%
   );
 }
 

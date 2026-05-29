@@ -1,0 +1,16 @@
+.diffnav {
+  @reference "../../styles/global.css";
+  @apply text-xl leading-none lg:text-2xl;
+
+  position: relative;
+  background-image: var(--hdr-green-red-gradient);
+  background-size: 100%;
+  background-clip: text;
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  -moz-background-clip: text;
+  -moz-text-fill-color: transparent;
+  background-repeat: repeat;
+  border: none;
+  padding: 0;
+}
