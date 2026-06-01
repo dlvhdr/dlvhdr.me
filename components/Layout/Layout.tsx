@@ -3,8 +3,6 @@ import Head from "next/head";
 import styles from "./layout.module.css";
 import Link from "next/link";
 import GithubIcon from "../Icons/GithubIcon";
-import LinkedInIcon from "../Icons/LinkedInIcon";
-import BlueskyIcon from "../Icons/BlueskyIcon";
 import RssIcon from "../Icons/RssIcon";
 import SunIcon from "../Icons/SunIcon";
 import MoonIcon from "../Icons/MoonIcon";
@@ -15,7 +13,7 @@ export const siteTitle = "Dolev Hadar";
 
 type LayoutProps = {
   children: React.ReactNode;
-  home?: boolean;
+  showBack?: boolean;
   wide?: boolean;
   className?: string;
   navClassName?: string;
@@ -29,7 +27,7 @@ export default function Layout({
   contentClassName,
   navClassName,
   footerClassName,
-  home = false,
+  showBack: showBack = false,
   wide = false,
 }: LayoutProps) {
   const { theme, setTheme } = useTheme();
@@ -55,21 +53,36 @@ export default function Layout({
                 DLVHDR
               </Link>
             </div>
+            <div className={styles.primaryLinks}>
+              <Link
+                href="/uses"
+                className={styles.link}
+                aria-label="What hardware and software I use"
+              >
+                /uses
+              </Link>
+              <Link
+                href="/links"
+                className={styles.link}
+                aria-label="A bunch of links to content/sites/videos/blogs I found interesting"
+              >
+                /links
+              </Link>
+              <Link
+                href="/contact"
+                className={styles.link}
+                aria-label="Contact me"
+              >
+                /contact
+              </Link>
+            </div>
             <a
               href="/rss/feed.xml"
               target="_blank"
               rel="noreferrer"
               aria-label="RSS Feed"
             >
-              <RssIcon />
-            </a>
-            <a
-              href="https://bsky.app/profile/dlvhdr.me"
-              target="_blank"
-              rel="noreferrer"
-              aria-label="@dlvhdr Bluesky Account"
-            >
-              <BlueskyIcon />
+              <RssIcon size="small" />
             </a>
             <a
               href="https://github.com/dlvhdr"
@@ -77,36 +90,30 @@ export default function Layout({
               rel="noreferrer"
               aria-label="@dlvhdr GitHub Account"
             >
-              <GithubIcon />
-            </a>
-            <a
-              href="https://www.linkedin.com/in/dolev-hadar/"
-              target="_blank"
-              rel="noreferrer"
-              aria-label="Dolev Hadar's LinkedIn Account"
-            >
-              <LinkedInIcon />
+              <GithubIcon size="small" />
             </a>
             <button
               className={styles.themeButton}
               onClick={() => setTheme(theme === "light" ? "dark" : "light")}
               aria-label="Toggle Light/Dark Theme"
             >
-              {theme === "light" ? <SunIcon /> : <MoonIcon />}
+              {theme === "light" ? (
+                <SunIcon size="small" />
+              ) : (
+                <MoonIcon size="small" />
+              )}
             </button>
           </div>
         </nav>
         <main className={classNames(styles.mainContent, contentClassName)}>
           {children}
-          {!home && (
+          {showBack && (
             <div className={styles.backToHome}>
               <Link href="/">← Back</Link>
             </div>
           )}
         </main>
         <footer className={classNames(styles.email, footerClassName)}>
-          dolevc2@gmail.com
-          <br />
           &copy; 2020-present Dolev Hadar. All Rights Reserved.
         </footer>
       </div>

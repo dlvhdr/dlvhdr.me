@@ -28,7 +28,7 @@ export default function Home({ allPostsData }: HomeProps) {
         />
       </Head>
       <Layout
-        home={true}
+        showBack={false}
         contentClassName={classNames(styles.posts, styles.mainContent)}
       >
         <section className={classNames(styles.postsList, utilStyles.list)}>

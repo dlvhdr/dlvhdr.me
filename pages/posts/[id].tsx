@@ -34,7 +34,7 @@ export default function Post({ postData }: PostProps) {
         <title>{title} | Dolev Hadar</title>
         <meta key="desc" name="description" content={preface} />
       </Head>
-      <Layout home={false}>
+      <Layout showBack={true}>
         <article className={styles.content}>
           <section className={styles.header}>
             <h1 className={styles.title}>{title}</h1>

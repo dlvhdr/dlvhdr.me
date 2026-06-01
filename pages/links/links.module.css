@@ -1,0 +1,44 @@
+.root {
+  height: 100vh;
+}
+
+.links a {
+  fill: var(--primary-color);
+  display: flex;
+  gap: 8px;
+  color: var(--pop-color);
+  align-items: center;
+}
+
+.content {
+  max-width: 85ch;
+  padding-bottom: 36px;
+}
+
+.content h1 {
+  margin-bottom: 16px;
+}
+
+.links {
+  margin-top: 32px;
+}
+
+.links li {
+  display: flex;
+  gap: 16px;
+  margin-bottom: 24px;
+}
+
+.linkText {
+  display: flex;
+  flex-direction: column;
+}
+
+.links img {
+  border-radius: 100%;
+  height: 60px;
+  border: 1px solid var(--pill);
+}
+
+.desc {
+}

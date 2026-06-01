@@ -31,3 +31,4 @@ yarn-error.log*
 
 # rss
 /public/rss
+/.yarn

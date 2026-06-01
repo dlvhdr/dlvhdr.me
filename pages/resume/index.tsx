@@ -15,7 +15,7 @@ export default function Resume() {
       className={styles.layout}
       navClassName={styles.layoutNav}
       footerClassName={styles.layoutFooter}
-      home={true}
+      showBack={false}
       wide={true}
     >
       <div className={styles.root}>
@@ -237,13 +237,33 @@ export default function Resume() {
           <h2>Experience</h2>
           <div>
             <Company
+              name="Port IO"
+              role="Full Stack Developer"
+              years={[2024]}
+              technologies={[
+                "React",
+                "NodeJS",
+                "Go",
+                "MongoDB",
+                "PostgreSQL",
+                "Swagger",
+              ]}
+            >
+              <ul>
+                <li>
+                  Working on <a href="https://port.io/">Port's</a> IDP SaaS
+                  (Internal Developer Portal) webapp and microservices as a
+                  fullstack developer.
+                </li>
+              </ul>
+            </Company>
+            <Company
               name="Komodor"
               role="Full Stack Developer"
-              years={[2023]}
+              years={[2023, 2024]}
               technologies={[
                 "React",
                 "Zustand",
-                "react-query",
                 "Go",
                 "Python",
                 "PostgreSQL",

@@ -2,6 +2,7 @@
   @reference "../../styles/global.css";
   @apply text-xl leading-none lg:text-2xl pl-2;
 
+  flex-grow: 1;
   text-decoration: none;
   transform: skew(-20deg);
   width: fit-content;
@@ -13,4 +14,10 @@
   -moz-background-clip: text;
   -moz-text-fill-color: transparent;
   background-repeat: repeat;
+}
+
+.stars {
+  align-self: flex-start;
+  flex-shrink: 0;
+  color: var(--yellow);
 }

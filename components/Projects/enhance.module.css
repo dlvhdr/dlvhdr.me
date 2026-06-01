@@ -2,8 +2,10 @@
   @reference "../../styles/global.css";
   @apply text-xl leading-none lg:text-2xl;
 
-  position: relative;
+  flex-grow: 1;
   background-image: var(--hdr-green-gradient);
+  text-decoration: none;
+  width: fit-content;
   background-size: 100%;
   background-clip: text;
   -webkit-background-clip: text;
@@ -11,6 +13,10 @@
   -moz-background-clip: text;
   -moz-text-fill-color: transparent;
   background-repeat: repeat;
-  border: none;
-  padding: 0;
+}
+
+.stars {
+  align-self: flex-start;
+  flex-shrink: 0;
+  color: var(--yellow);
 }
