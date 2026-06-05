@@ -1,0 +1,21 @@
+.stars {
+  align-self: flex-start;
+  flex-shrink: 0;
+  color: var(--yellow);
+}
+
+.card {
+  @reference "../../styles/global.css";
+  @apply rounded-lg flex h-full w-full flex-row items-start gap-8 border border-(--separator) pt-6 pb-4 px-6 no-underline hover:bg-(--card-color) relative;
+}
+
+.stars {
+  position: absolute;
+  top: -10px;
+  right: 2px;
+  background: var(--pill);
+  border-radius: 4px;
+  padding: 4px 8px;
+  line-height: 1;
+  font-size: 12px;
+}

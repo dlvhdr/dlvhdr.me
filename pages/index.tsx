@@ -55,7 +55,7 @@ export default function Home({ allPostsData }: HomeProps) {
           </section>
           <section>
             <h2 className={styles.title}>Projects</h2>
-            <ul className="grid md:grid-cols-2 gap-2 gap-y-1 lg:gap-y-4 lg:gap-6">
+            <ul className="grid md:grid-cols-2 gap-2 gap-y-3 lg:gap-y-4 lg:gap-6">
               <li className="flex">
                 <Dash />
               </li>

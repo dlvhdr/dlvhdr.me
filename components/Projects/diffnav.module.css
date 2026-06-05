@@ -15,9 +15,3 @@
   padding: 0;
   flex-grow: 1;
 }
-
-.stars {
-  align-self: flex-start;
-  flex-shrink: 0;
-  color: var(--yellow);
-}

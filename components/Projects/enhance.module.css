@@ -14,9 +14,3 @@
   -moz-text-fill-color: transparent;
   background-repeat: repeat;
 }
-
-.stars {
-  align-self: flex-start;
-  flex-shrink: 0;
-  color: var(--yellow);
-}
