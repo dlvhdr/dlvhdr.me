@@ -30,79 +30,86 @@ export default function Uses() {
             </a>
             : my editor of choice. Completely customizable and in my control,
             not bloated, keyboard centric. I use the following notable plugins:
-            <ul>
-              <li>
-                <a href="https://github.com/folke/lazy.nvim">
-                  Lazy plugin manager
-                </a>{" "}
-                - FOLKE.
-              </li>
-              <li>
-                <a href="https://github.com/echasnovski/mini.files">
-                  mini.files
-                </a>{" "}
-                - a delightful non intrusive file tree explorer.
-              </li>
-              <li>
-                <a href="https://github.com/so1ve/snacks-fff.nvim">fff.nvim</a>{" "}
-                - the fastest and smartest file picker and grep.
-              </li>
-              <li>
-                <a href="https://github.com/folke/snacks.nvim">snacks.nvim</a> -
-                the great folke - pickers, image previews, dashboard and more.
-              </li>
-              <li>
-                <a href="https://github.com/Chaitanyabsprip/fastaction.nvim">
-                  fastaction.nvim
-                </a>{" "}
-                - press <code>ga</code> for LSP code actions with easy to
-                remember hotkeys.
-              </li>
-              <li>
-                <a href="https://github.com/chrisgrieser/nvim-chainsaw">
-                  chainsaw
-                </a>{" "}
-                - quickly log the variable under the cursor or just a BEEP.
-              </li>
-              <li>
-                <a href="https://github.com/dlyongemallo/diffview.nvim">
-                  diffview.nvim
-                </a>{" "}
-                - handle merge conflicts, see file history or diff against main.
-              </li>
-              <li>
-                <a href="https://github.com/dlvhdr/gh-blame.nvim">
-                  gh-blame.nvim
-                </a>{" "}
-                - show the PR that changed the current line.
-              </li>
-              <li>
-                <a href="https://github.com/linrongbin16/gitlinker.nvim">
-                  gitlinker.nvim
-                </a>{" "}
-                - open the current file on GitHub.
-              </li>
-              <li>
-                <a href="https://github.com/MagicDuck/grug-far.nvim">
-                  grug-far.nvim
-                </a>{" "}
-                - a very capable find and replace.
-              </li>
-              <li>
-                <a href="https://github.com/pwntester/octo.nvim">octo.nvim</a> -
-                code reviews in nvim.
-              </li>
-              <li>
-                <a href="https://github.com/aaronik/treewalker.nvim">
-                  treewalker.nvim
-                </a>{" "}
-                - walk up/down the AST with <code>K</code> and <code>J</code>.
-              </li>
-              <li>
-                Check out my full config on{" "}
-                <a href="https://github.com/dlvhdr/dotfiles">GitHub</a>.
-              </li>
-            </ul>
+            <details className={styles.nvimPlugins}>
+              <summary>click to see my plugins...</summary>
+              <ul>
+                <li>
+                  <a href="https://github.com/folke/lazy.nvim">
+                    Lazy plugin manager
+                  </a>{" "}
+                  - the great plugin manager by the legend folke.
+                </li>
+                <li>
+                  <a href="https://github.com/echasnovski/mini.files">
+                    mini.files
+                  </a>{" "}
+                  - a delightful non intrusive file tree explorer.
+                </li>
+                <li>
+                  <a href="https://github.com/so1ve/snacks-fff.nvim">
+                    fff.nvim
+                  </a>{" "}
+                  - the fastest and smartest file picker and grep.
+                </li>
+                <li>
+                  <a href="https://github.com/folke/snacks.nvim">snacks.nvim</a>{" "}
+                  - the great folke - pickers, image previews, dashboard and
+                  more.
+                </li>
+                <li>
+                  <a href="https://github.com/Chaitanyabsprip/fastaction.nvim">
+                    fastaction.nvim
+                  </a>{" "}
+                  - press <code>ga</code> for LSP code actions with easy to
+                  remember hotkeys.
+                </li>
+                <li>
+                  <a href="https://github.com/chrisgrieser/nvim-chainsaw">
+                    chainsaw
+                  </a>{" "}
+                  - quickly log the variable under the cursor or just a BEEP.
+                </li>
+                <li>
+                  <a href="https://github.com/dlyongemallo/diffview.nvim">
+                    diffview.nvim
+                  </a>{" "}
+                  - handle merge conflicts, see file history or diff against
+                  main.
+                </li>
+                <li>
+                  <a href="https://github.com/dlvhdr/gh-blame.nvim">
+                    gh-blame.nvim
+                  </a>{" "}
+                  - show the PR that changed the current line.
+                </li>
+                <li>
+                  <a href="https://github.com/linrongbin16/gitlinker.nvim">
+                    gitlinker.nvim
+                  </a>{" "}
+                  - open the current file on GitHub.
+                </li>
+                <li>
+                  <a href="https://github.com/MagicDuck/grug-far.nvim">
+                    grug-far.nvim
+                  </a>{" "}
+                  - a very capable find and replace.
+                </li>
+                <li>
+                  <a href="https://github.com/pwntester/octo.nvim">octo.nvim</a>{" "}
+                  - code reviews in nvim.
+                </li>
+                <li>
+                  <a href="https://github.com/aaronik/treewalker.nvim">
+                    treewalker.nvim
+                  </a>{" "}
+                  - walk up/down the AST with <code>K</code> and <code>J</code>.
+                </li>
+                <li>
+                  Check out my full config on{" "}
+                  <a href="https://github.com/dlvhdr/dotfiles">GitHub</a>.
+                </li>
+              </ul>
+            </details>
           </li>
           <li>
             <a

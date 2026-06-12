@@ -13,4 +13,5 @@
   -moz-background-clip: text;
   -moz-text-fill-color: transparent;
   background-repeat: repeat;
+  padding-block: 2px;
 }

@@ -77,6 +77,20 @@ const LINKS = [
       </>
     ),
   },
+  {
+    image:
+      "https://substackcdn.com/image/fetch/$s_!RxBq!,w_170,c_limit,f_auto,q_auto:best,fl_progressive:steep/https%3A%2F%2Fsubstack-post-media.s3.amazonaws.com%2Fpublic%2Fimages%2Fc6a2246b-c48e-47a7-9f3e-27fb27d85f72_971x971.png",
+    url: "https://mayerchissick.com/",
+    title: "Uri Mayer-Chissick",
+    description: (
+      <>
+        This one's in Hebrew. Uri Mayer-Chissick is a food historian that
+        teaches me and my family how to eat and live well. He describes his site
+        as "An exploration of how ancient food and healing traditions can still
+        guide how we eat, live, and care for ourselves today.".
+      </>
+    ),
+  },
 ];
 
 export default function Links() {

@@ -133,7 +133,7 @@ body[data-theme="dark"] .themeButton {
 }
 
 .link {
-  font-size: 16px;
+  font-size: 14px;
   color: var(--dimmed-fg-color);
   font-weight: 400;
 }
