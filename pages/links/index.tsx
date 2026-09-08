@@ -44,7 +44,7 @@ const LINKS = [
   },
   {
     image: "https://mollyrocket.com/r/molly_logo_80ab5040d770d5c7.png",
-    url: "https://www.youtube.com/@InternetOfBugs",
+    url: "https://www.youtube.com/mollyrocket",
     title: "Molly Rocket",
     description: (
       <>
